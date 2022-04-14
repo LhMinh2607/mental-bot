@@ -1,0 +1,92 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_remind_therapy
+  - intent: affirm
+  - action: utter_happy
+
+- story: bot rule
+  steps:
+  - intent: bot_rule
+  - action: utter_botrule
+  - intent: affirm
+  - action: utter_botrule
+
+- story: bot rule 2
+  steps:
+  - intent: bot_rule
+  - action: utter_botrule
+  - intent: deny
+  - action: utter_botrule
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: depressed path 1
+  steps:
+  - intent: mood_suicide
+  - action: utter_prevent_suicide
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: depressed path 2
+  steps:
+  - intent: mood_suicide
+  - action: utter_prevent_suicide
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: send picture 1
+  steps:
+  - intent: ask_for_picture
+  - action: action_send_picture
+  - intent: ask_for_more
+  - action: action_send_picture
+
+- story: send picture 2
+  steps:
+  - intent: ask_for_picture
+  - action: action_send_picture
+  - intent: deny
+  - action: utter_happy
+
+- story: send picture 3
+  steps:
+  - intent: ask_for_picture
+  - action: action_send_picture
+  - intent: ask_for_more
+  - action: action_send_picture
+  - intent: deny
+  - action: utter_happy

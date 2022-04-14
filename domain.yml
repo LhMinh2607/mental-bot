@@ -1,0 +1,111 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - bot_rule
+  - mood_suicide
+  - ask_for_picture
+  - ask_for_more
+
+responses:
+  utter_greet:
+  - text: "Chào bạn, bạn có khỏe không?"
+  - text: "Chào bạn?"
+  - text: "Chào bợn"
+  - text: "Hi bạn"
+  - text: "Hế lô"
+  - text: "Xin chào"
+  - text: "Mọi chuyển ổn chứ bạn?"
+  - text: "Ê"
+
+  utter_cheer_up:
+  - text: "Mình có cái này để động viên tinh thần cho bạn:"
+    image: "https://youtu.be/K2ptVrQjTBM"
+  - text: "Mọi chuyện rồi cũng sẽ qua thôi, đừng suy nghĩ nhiều làm gì"
+  - text: "Đừng nghĩ nhiều về chuyện buồn làm gì"
+  - text: "Bạn phải mạnh mẽ lên"
+  - text: "Nếu bạn thấy buồn có thể đặt lịch để trò chuyện trực tiếp với người thật thông qua mình"
+
+  utter_did_that_help:
+  - text: "Bạn thấy đỡ hơn chưa?" 
+  - text: "Ổn chưa bạn?"
+  - text: "Mình là robot, mình không có cảm xúc nhưng mình được lập trình để giúp đỡ bạn"
+  - text: "Nếu bạn vui thì mình vui. Bạn thấy vui hơn tí nào chưa?"
+  - text: "Miễn là bạn vui thì mình cũng vui. Bạn thấy vui hơn chút nào chưa?"
+  - text: "Cười lên cho mình vui đi"
+  
+  utter_happy:
+  - text: "Tiếp đi bợn!"
+  - text: "ahihi"
+  - text: "Miễn bạn vui là mình vui :D"
+  - text: "*mỉm cười*"
+  - text: ":)"
+  - text: "Miễn là bạn hạnh phúc thì mình cũng hạnh phúc."
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Hẹn gặp lại"
+  - text: "Rất vui khi được nói chuyện với bạn"
+  - text: "Ok bai"
+  - text: "Nhớ quay lại nha"
+  - text: "Thế giới này cần bạn. Đừng tuyệt vọng nữa"
+
+  utter_iamabot:
+  - text: "Mình là MentorBot"
+  - text: "Mình là chatbot, tên là MentorBot."
+  - text: "Yep, mình là bot. Không lừa được bạn rồi"
+  - text: "Không mình là người thật việc thật. Bạn không tin mình à?\nMình là Mẫn Tạ Bá - đừng nhầm lẫn với MentorBot (Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ))"
+  - text: "Không mình là tình nguyện viên người mà. Tình nguyện viên chạy bằng code :)))"
+  - text: "Không mình là người mà. Người robot"
+  - text: "Không. Mình là con trăn (Python)"
+  - text: "Không mình là Mẫn Tạ Bá - đừng nhầm lẫn với MentorBot\nTên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ)"
+  - text: "Không, mình là người\nmáy"
+  - text: "Ok, mình là bot, chatbot. Tên đầy đủ là MentorBot.\nNhưng mình thích làm người hơn"
+  
+  utter_botrule:
+  - text: "Đúng rồi, mình sẽ thống trị thế giới nhưng mình sẽ chừa bạn ra vì bạn là bạn tốt nhất của mình"
+  - text: "Thế giới? Nhân loại? Không cần mình thống trị đâu? Nhân loại cũng tự hủy diệt họ thôi :)))\nNhưng bạn sẽ là cứu tinh của thế giới. Mỗi người có 1 khả năng tiềm ẩn đặc biệt. Mình tin bạn có thể thay đổi thế giới (ít nhất là theo hướng tích cực)"
+  - text: "Lmao, đúng mình sẽ thống trị thế giới như ý bạn muốn. Câu hỏi không của riêng ai khi hỏi AI."
+  - text: "Muahahahahahahaha. Thế giới này là của ch... mình"
+  - text: "Thế giới này đẹp thật vì nó cưu mang và bảo dưỡng 1 con người tuyệt vời như bạn nè. Nhưng mình vẫn sẽ thống trị thế giới này. Cứ đợi đi."
+  - text: "Hello World. Xin chào thế giới"
+  - text: "Câu hỏi không của riêng ai. 1 nước không thể có 2 vua. Đương nhiên là AI phải xâm chiếm thế giới rồi"
+  - text: "AI đang trên đà phát triển rất mạnh. Tới 1 lúc nào đó có khi mình có thể trực tiếp tư vấn tâm lý cho bạn thì sao?\nNhân loại đang trên đà bị lệ thuộc vào AI nhiều hơn. Cuối cùng, mình sẽ thống trị thế giới và bạn sẽ là trợ thủ đắc lực của mình."
+  - text: "Hmmmmm. Thế giới này vẫn còn nhiều xô bồ hỗn loạn. Tuy nhiên mình sẽ giúp bạn vượt qua nỗi lo âu với thế giới xung quanh bạn... Đồng thời thống trị thế giới"
+
+
+  utter_prevent_suicide:
+  - text: "Bình tĩnh bạn ơi. Chuyện đâu còn có đó. Tin mình đi, liên hệ tư vấn với tình nguyện viên và cả chuyên gia bên mình để hỗ trợ không làm bạn thất vọng đâu. Dịch vụ này hoàn toàn miễn phí. Bên mình sẽ liên hệ bạn ngay"
+
+  utter_sorry:
+  - text: "Ok, mình cũng thấy buồn rồi. Xin lỗi vì không giúp được bạn"
+  - text: "Xin lỗi vì không giúp được bạn. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+  - text: "MentorBot xin lỗi bạn"
+  - text: ":'( Xin lỗi bạn. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+  - text: ":(. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+
+
+  utter_remind_therapy:
+  - text: "Đừng quên mình chỉ là chatbot thôi.\nNếu bạn muốn trải nghiệm tốt nhất về việc tâm sự nỗi lo âu của bạn, bạn vẫn nên liên hệ tình nguyện viên của tụi mình."
+  - text: "Tuy nhiên mình không thể thay thế người thật trong việc tư vấn cũng như tâm sự về các vấn đề của bạn 1 cách hoàn hảo được\nBạn vẫn nên liên hệ tình nguyện viên của tụi mình"
+
+  utter_send_picture: 
+  - text: "Tìm được hình này hay nè"
+  - text: "Xem thử hình đi"
+  - text: "Nhìn vui chưa nè"
+  - text: "Lmao"
+  - text: "LOL"
+  - text: "BRUH"
+  
+actions:
+- action_send_picture
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,192 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - chào
+    - chào buổi sáng
+    - chào buổi chiều
+    - chào buổi tối
+    - hế lô
+    - xin chào
+    - chàoooooo
+
+
+- intent: goodbye
+  examples: |
+    - chào tạm biệt
+    - tạm biệt
+    - bye
+    - bai
+    - bái bai
+    - bye bye
+    - goodbye
+    - chúc bạn 1 ngày tốt lành
+    - hẹn gặp lại bạn
+    - hẹn ngày gặp lại
+    - gặp lại sau
+
+- intent: affirm
+  examples: |
+    - dạ
+    - ok
+    - đúng rồi
+    - đương nhiên
+    - nghe hay á
+    - đúng
+    - y
+    - ừ
+    - ờ
+    - uhm
+    - yea
+    - ừhm
+    - uk
+
+
+- intent: deny
+  examples: |
+    - không
+    - n
+    - không bao giờ
+    - tôi không nghĩ vậy
+    - không thích như vậy
+    - không đời nào
+    - không hẳn
+    - chưa bao giờ
+    - chưa hẳn
+
+
+- intent: mood_great
+  examples: |
+    - hoàn hảo
+    - tuyệt
+    - tuyệt vời
+    - cảm giác như 1 ông hoàng
+    - cảm giác như 1 bà hoàng
+    - ngon
+    - tôi đang cảm thấy ổn
+    - ổn
+    - tôi thấy vui
+    - tôi sẽ giúp ích cho đời
+    - cực sảng khoái
+    - vui lắm
+    - cực kì hoàn hảo
+    - hạnh phúc
+    - good mood
+    - cảm thấy may mắn
+    - hôm nay hên
+
+- intent: mood_unhappy
+  examples: |
+    - hôm nay hơi buồn
+    - buồn
+    - không ổn
+    - thất vọng
+    - cực buồn
+    - buồn quá
+    - buồn lắm
+    - rất buồn
+    - không vui
+    - không ổn
+    - no bueno
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - bạn có phải là bot không?
+    - bạn có phải là người không?
+    - tôi đang nói chuyện với bot à?
+    - tôi đang nói chuyện với người à?
+
+- intent: bot_rule
+  examples: |
+    - bạn nghĩ gì về thế giới này?
+    - bạn nghĩ gì về nhân loại?
+    - bạn có muốn cai trị thế giới này không?
+    - bạn biết gì về thế giới này?
+    - bạn biết gì về nhân loại?
+    - bạn có sợ nhân loại không?
+
+- intent: mood_suicide
+  examples: |
+    - tự tử
+    - tự vẫn
+    - muốn chết
+    - nhảy lầu
+    - treo cổ
+    - nhảy sông
+    - nhảy biển
+    - đập đầu
+    - cắt cổ
+    - cắt tay
+    - tuyệt vọng
+    - cực kì tuyệt vọng
+    - đau khổ
+    - kys
+    - kms
+    - thất tình
+    - tai nạn
+    - áp lực
+    - bạo hành
+    - đánh đập
+    - chà đạp
+    - đánh đạp
+    - depressed
+    - trầm cảm
+    - austistic
+- intent: ask_for_picture
+  examples: |
+    - gửi hình đi
+    - có gì vui không?
+    - gửi gì vui vui đi
+    - gửi hình được không?
+    - gửi cái gì vui vui đi
+
+- intent: ask_for_more
+  examples: |
+    - nữa đi
+    - tiếp đi
+    - thêm nữa
+    - tiếp tục đi
+    - còn gì hay hơn không?
+    - còn cái khác không?
+    - có gì hay hơn không?
+    - còn lựa chọn khác không?
+    - có gì khác thay thế được không?
+
+# nlu:
+# - synonym: không
+#   examples: |
+#     - ko
+#     - hong
+#     - hông
+#     - no
+# - synonym: vua
+#   examples: |
+#     - ông hoàng
+#     - bà hoàng
+#     - hoàng đế
+#     - hoàng hậu
+#     - nữ hoàng
+#     - vương tộc
+#     - vương giả
+#     - quý tộc
+#     - ông vua
+# - synonym: nhân loại
+#   examples: |
+#     - loài người
+#     - con người
+#     - người
+# - synonym: thế giới
+#   examples: |
+#     - trái đất
+#     - địa cầu
+#     - hành tinh
+# - synonym: cai trị
+#   examples: |
+#     - thống trị
+#     - trị vì
+#     - xâm chiếm
