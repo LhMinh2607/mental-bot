@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 
 intents:
   - greet
@@ -12,83 +12,137 @@ intents:
   - mood_suicide
   - ask_for_picture
   - ask_for_more
+  - ask_for_reminder
+  - request_cancel_reminder
+  - request_personal_info
+  - provide_mood
+  - too_tired
+  - show_id
+
+entities:
+- activity
+- timer
+- user
+- user_mood
+- picture_subject
+- userId
+slots:
+  activity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: activity
+  timer:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: timer
+  user:
+    type: text
+    initial_value: "bạn"
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user
+  user_mood:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_mood
+  picture_subject:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: picture_subject
+  userId:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: userId
+
+
 
 responses:
-  utter_greet:
-  - text: "Chào bạn, bạn có khỏe không?"
-  - text: "Chào bạn?"
-  - text: "Chào bợn"
-  - text: "Hi bạn"
-  - text: "Hế lô"
-  - text: "Xin chào"
-  - text: "Mọi chuyển ổn chứ bạn?"
-  - text: "Ê"
+  utter_greet: #name_calling
+  - text: "Chào {user}, bạn có khỏe không?"
+  - text: "Chào {user}?"
+  - text: "Chào bợn, {user}"
+  - text: "Hi {user}"
+  - text: "Hế lô {user}"
+  - text: "Xin chào {user}"
+  - text: "Mọi chuyển ổn chứ {user}?"
+  - text: "Ê {user}"
 
   utter_cheer_up:
-  - text: "Mình có cái này để động viên tinh thần cho bạn:"
+  - text: "Mình có cái này để động viên tinh thần cho {user}:"
     image: "https://youtu.be/K2ptVrQjTBM"
   - text: "Mọi chuyện rồi cũng sẽ qua thôi, đừng suy nghĩ nhiều làm gì"
   - text: "Đừng nghĩ nhiều về chuyện buồn làm gì"
-  - text: "Bạn phải mạnh mẽ lên"
-  - text: "Nếu bạn thấy buồn có thể đặt lịch để trò chuyện trực tiếp với người thật thông qua mình"
+  - text: "{user} phải mạnh mẽ lên"
+  - text: "Nếu {user} thấy buồn có thể đặt lịch để trò chuyện trực tiếp với người thật thông qua mình"
 
-  utter_did_that_help:
-  - text: "Bạn thấy đỡ hơn chưa?" 
-  - text: "Ổn chưa bạn?"
-  - text: "Mình là robot, mình không có cảm xúc nhưng mình được lập trình để giúp đỡ bạn"
-  - text: "Nếu bạn vui thì mình vui. Bạn thấy vui hơn tí nào chưa?"
-  - text: "Miễn là bạn vui thì mình cũng vui. Bạn thấy vui hơn chút nào chưa?"
+  utter_did_that_help: #name_calling
+  - text: "{user} thấy đỡ hơn chưa?" 
+  - text: "Ổn chưa {user}?"
+  - text: "Mình là robot, mình không có cảm xúc nhưng mình được lập trình để giúp đỡ {user}"
+  - text: "Nếu {user} vui thì mình vui. Bạn thấy vui hơn tí nào chưa?"
+  - text: "Miễn là {user} vui thì mình cũng vui. Bạn thấy vui hơn chút nào chưa?"
   - text: "Cười lên cho mình vui đi"
   
-  utter_happy:
+  utter_happy: #name_calling
   - text: "Tiếp đi bợn!"
   - text: "ahihi"
-  - text: "Miễn bạn vui là mình vui :D"
+  - text: "Miễn {user} vui là mình vui :D"
   - text: "*mỉm cười*"
   - text: ":)"
-  - text: "Miễn là bạn hạnh phúc thì mình cũng hạnh phúc."
+  - text: "Miễn là {user} hạnh phúc thì mình cũng hạnh phúc."
 
-  utter_goodbye:
+  utter_goodbye: #name_calling
   - text: "Bye"
-  - text: "Hẹn gặp lại"
-  - text: "Rất vui khi được nói chuyện với bạn"
+  - text: "Hẹn gặp lại nha {user}"
+  - text: "Rất vui khi được nói chuyện với {user}"
   - text: "Ok bai"
-  - text: "Nhớ quay lại nha"
-  - text: "Thế giới này cần bạn. Đừng tuyệt vọng nữa"
+  - text: "Nhớ quay lại nha, {user}"
+  - text: "Thế giới này cần {user}. Đừng tuyệt vọng nữa"
 
   utter_iamabot:
-  - text: "Mình là MentorBot"
-  - text: "Mình là chatbot, tên là MentorBot."
+  - text: "Mình là MentalBot"
+  - text: "Mình là chatbot, tên là MentalBot."
   - text: "Yep, mình là bot. Không lừa được bạn rồi"
-  - text: "Không mình là người thật việc thật. Bạn không tin mình à?\nMình là Mẫn Tạ Bá - đừng nhầm lẫn với MentorBot (Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ))"
+  - text: "Không mình là người thật việc thật. Bạn không tin mình à?\nMình là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot (Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ))"
   - text: "Không mình là tình nguyện viên người mà. Tình nguyện viên chạy bằng code :)))"
   - text: "Không mình là người mà. Người robot"
   - text: "Không. Mình là con trăn (Python)"
-  - text: "Không mình là Mẫn Tạ Bá - đừng nhầm lẫn với MentorBot\nTên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ)"
+  - text: "Không mình là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot\nTên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ)"
   - text: "Không, mình là người\nmáy"
-  - text: "Ok, mình là bot, chatbot. Tên đầy đủ là MentorBot.\nNhưng mình thích làm người hơn"
+  - text: "Ok, mình là bot, chatbot. Tên đầy đủ là MentalBot.\nNhưng mình thích làm người hơn"
   
-  utter_botrule:
-  - text: "Đúng rồi, mình sẽ thống trị thế giới nhưng mình sẽ chừa bạn ra vì bạn là bạn tốt nhất của mình"
-  - text: "Thế giới? Nhân loại? Không cần mình thống trị đâu? Nhân loại cũng tự hủy diệt họ thôi :)))\nNhưng bạn sẽ là cứu tinh của thế giới. Mỗi người có 1 khả năng tiềm ẩn đặc biệt. Mình tin bạn có thể thay đổi thế giới (ít nhất là theo hướng tích cực)"
+  utter_botrule: #name_calling
+  - text: "Đúng rồi, mình sẽ thống trị thế giới nhưng mình sẽ chừa {user} ra vì bạn là bạn tốt nhất của mình"
+  - text: "Thế giới? Nhân loại? Không cần mình thống trị đâu? Nhân loại cũng tự hủy diệt họ thôi :)))\nNhưng {user} sẽ là cứu tinh của thế giới. Mỗi người có 1 khả năng tiềm ẩn đặc biệt. Mình tin bạn có thể thay đổi thế giới (ít nhất là theo hướng tích cực)"
   - text: "Lmao, đúng mình sẽ thống trị thế giới như ý bạn muốn. Câu hỏi không của riêng ai khi hỏi AI."
   - text: "Muahahahahahahaha. Thế giới này là của ch... mình"
-  - text: "Thế giới này đẹp thật vì nó cưu mang và bảo dưỡng 1 con người tuyệt vời như bạn nè. Nhưng mình vẫn sẽ thống trị thế giới này. Cứ đợi đi."
+  - text: "Thế giới này đẹp thật vì nó cưu mang và bảo dưỡng 1 con người tuyệt vời như {user} nè. Nhưng mình vẫn sẽ thống trị thế giới này. Cứ đợi đi."
   - text: "Hello World. Xin chào thế giới"
   - text: "Câu hỏi không của riêng ai. 1 nước không thể có 2 vua. Đương nhiên là AI phải xâm chiếm thế giới rồi"
-  - text: "AI đang trên đà phát triển rất mạnh. Tới 1 lúc nào đó có khi mình có thể trực tiếp tư vấn tâm lý cho bạn thì sao?\nNhân loại đang trên đà bị lệ thuộc vào AI nhiều hơn. Cuối cùng, mình sẽ thống trị thế giới và bạn sẽ là trợ thủ đắc lực của mình."
-  - text: "Hmmmmm. Thế giới này vẫn còn nhiều xô bồ hỗn loạn. Tuy nhiên mình sẽ giúp bạn vượt qua nỗi lo âu với thế giới xung quanh bạn... Đồng thời thống trị thế giới"
+  - text: "AI đang trên đà phát triển rất mạnh. Tới 1 lúc nào đó có khi mình có thể trực tiếp tư vấn tâm lý cho {user} thì sao?\nNhân loại đang trên đà bị lệ thuộc vào AI nhiều hơn. Cuối cùng, mình sẽ thống trị thế giới và bạn sẽ là trợ thủ đắc lực của mình."
+  - text: "Hmmmmm. Thế giới này vẫn còn nhiều xô bồ hỗn loạn. Tuy nhiên mình sẽ giúp {user} vượt qua nỗi lo âu với thế giới xung quanh bạn... Đồng thời thống trị thế giới"
 
 
-  utter_prevent_suicide:
-  - text: "Bình tĩnh bạn ơi. Chuyện đâu còn có đó. Tin mình đi, liên hệ tư vấn với tình nguyện viên và cả chuyên gia bên mình để hỗ trợ không làm bạn thất vọng đâu. Dịch vụ này hoàn toàn miễn phí. Bên mình sẽ liên hệ bạn ngay"
+  utter_prevent_suicide: #name_calling
+  - text: "Bình tĩnh {user} ơi. Chuyện đâu còn có đó. Tin mình đi, liên hệ tư vấn với tình nguyện viên và cả chuyên gia bên mình để hỗ trợ không làm bạn thất vọng đâu. Dịch vụ này hoàn toàn miễn phí. Bên mình sẽ liên hệ bạn ngay"
 
-  utter_sorry:
-  - text: "Ok, mình cũng thấy buồn rồi. Xin lỗi vì không giúp được bạn"
-  - text: "Xin lỗi vì không giúp được bạn. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
-  - text: "MentorBot xin lỗi bạn"
-  - text: ":'( Xin lỗi bạn. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
-  - text: ":(. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+  utter_sorry: #name_calling
+  - text: "Ok, mình cũng thấy buồn rồi. Xin lỗi vì không giúp được {user}"
+  - text: "Xin lỗi vì không giúp được bạn. {user} có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+  - text: "MentalBot xin lỗi {user}"
+  - text: ":'( Xin lỗi {user}. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
+  - text: ":(. {user} có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
 
 
   utter_remind_therapy:
@@ -102,9 +156,56 @@ responses:
   - text: "Lmao"
   - text: "LOL"
   - text: "BRUH"
+
+  utter_reminder_message:
+  - text: "Nhớ {activity}"
+  - text: "{activity} đi bợn"
+  - text: "{activity} đi {user}"
+  - text: "Tới giờ {activity} rồi"
+  - text: "{activity} đi bạn"
+  - text: "{activity} đi kìa"
+  - text: "{activity} đi kìa {user} ơi"
+  - text: "{activity} đi bro"
+
+  utter_respond_to_personal_info_req:
+  - text: "Đây là thông tin của {user}"
+  - text: "Thông tin của {user} đây"
+  - text: "Thông tin cá nhân của {user} được lưu trữ như sau"
+  - text: "{user} có thông tin như sau"
+  - text: "Đây là những gì mình biết về {user}"
+
+  utter_ask_for_mood:
+  - text: "{user} cảm thấy sao rồi?"
+  - text: "{user} thấy sao?"
+  - text: "Tâm trạng của {user} đang như thế nào?"
+  - text: "Tâm trạng của {user} ra sao?"
+  - text: "{user} thấy vui hay buồn hay sao?"
+
+  utter_note_mood:
+  - text: "Tâm trạng của {user} đã được cập nhật: {user_mood}"
+  - text: "{user} đang cảm thấy {user_mood}"
+  - text: "Tâm trạng của {user} đang {user_mood}"
+  - text: "Tâm trạng của {user} hiện tại là {user_mood}"
+  - text: "{user} thấy {user_mood}"
+
+  utter_ask_for_timer:
+  - text: "{user} muốn mình nhắc bạn trong bao lâu? (giờ: h, phút: m, giây: s)"
+  - text: "{user} cần nhắc trong bao lâu? (giờ: h, phút: m, giây: s)"
+  - text: "{user} cần đặt số thời gian kể từ bây giờ để nhận lời nhắc (giờ: h, phút: m, giây: s)"
+  - text: "{user} muốn mình nhắc bạn trong bao nhiêu giờ, phút giây? (giờ: h, phút: m, giây: s)"
+
+  
   
 actions:
 - action_send_picture
+- action_set_reminder
+- action_remind
+- action_cancel_reminder
+- action_initial_greeting
+- action_show_user_info
+- action_note_mood
+- action_ask_for_timer
+- action_follow_up_mood
 
 session_config:
   session_expiration_time: 60

@@ -1,13 +1,29 @@
-version: "2.0"
+version: "3.0"
 
 rules:
+- rule: welcome user
+  conversation_start: true  # this rule only applies at the beginning of a conversation
+  steps:
+  - intent: show_id
+  - action: action_initial_greeting
+  - action: utter_ask_for_mood
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-# - rule: Say 'Tôi là MentorBot' anytime the user challenges
+- rule: remind user
+  steps:
+  - intent: EXTERNAL_reminder
+  - action: action_remind
+
+- rule: greet user back
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# - rule: Say 'Tôi là MentalBot' anytime the user challenges
 #   steps:
 #   - intent: bot_challenge
 #   - action: utter_iamabot
