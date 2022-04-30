@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 
 nlu:
 - intent: greet
@@ -112,31 +112,32 @@ nlu:
 
 - intent: mood_suicide
   examples: |
-    - tự tử
-    - tự vẫn
-    - muốn chết
-    - nhảy lầu
-    - treo cổ
-    - nhảy sông
-    - nhảy biển
-    - đập đầu
-    - cắt cổ
-    - cắt tay
-    - tuyệt vọng
-    - cực kì tuyệt vọng
-    - đau khổ
-    - kys
-    - kms
-    - thất tình
-    - tai nạn
-    - áp lực
-    - bạo hành
-    - đánh đập
-    - chà đạp
-    - đánh đạp
-    - depressed
-    - trầm cảm
-    - austistic
+    - [tự tử](user_mood)
+    - [tự vẫn](user_mood)
+    - [muốn chết](user_mood)
+    - [nhảy lầu](user_mood)
+    - [treo cổ](user_mood)
+    - [nhảy sông](user_mood)
+    - [nhảy biển](user_mood)
+    - [đập đầu](user_mood)
+    - [cắt cổ](user_mood)
+    - [cắt tay](user_mood)
+    - [tuyệt vọng](user_mood)
+    - [cực kì tuyệt vọng](user_mood)
+    - [đau khổ](user_mood)
+    - [kys](user_mood)
+    - [kms](user_mood)
+    - [thất tình](user_mood)
+    - [tai nạn](user_mood)
+    - [áp lực](user_mood)
+    - [bạo hành](user_mood)
+    - [đánh đập](user_mood)
+    - [chà đạp](user_mood)
+    - [đánh đạp](user_mood)
+    - [depressed](user_mood)
+    - [trầm cảm](user_mood)
+    - [austistic](user_mood)
+
 - intent: ask_for_picture
   examples: |
     - gửi hình đi
@@ -157,7 +158,113 @@ nlu:
     - còn lựa chọn khác không?
     - có gì khác thay thế được không?
 
-# nlu:
+- intent: ask_for_specific_picture
+  examples: |
+    - gửi hình [anime](picture_subject) đi
+    - gửi hình [game](picture_subject) đi
+    - gửi hình [lol](picture_subject) đi
+    - gửi hình [manga](picture_subject) đi
+    - gửi hình [memes](picture_subject) đi
+
+
+- intent: ask_for_reminder
+  examples: |
+    - nhắc tôi [gọi cho mẹ](activity) trong [1h20m30s](timer)
+    - nhắc tôi [ăn cơm](activity) trong [1h20m30s](timer)
+    - nhắc tôi đi [ngủ](activity) trong [1h20m30s](timer)
+    - nhắc tôi [học bài](activity) trong [0h20m30s](timer)
+    - hẹn giờ đi [ngủ](activity) trong [1h00m30s](timer)
+    - nhắc tôi [ăn sáng](activity) trong [1h20m30s](timer)
+    - nhắc tôi [tập thể dục](activity) trong [2h1m30s](timer)
+    - nhắc tôi đi [tập thể dục](activity) trong [1h20m30s](timer)
+    - nhắc tôi [đánh răng](activity) trong [5h25m30s](timer)
+    - nhắc tôi [học bài](activity) trong [1h20m30s](timer)
+    - nhắc tôi [ăn kem](activity) trong [1h21m23s](timer)
+    - nhắc tôi [quay lại nhắn tin tiếp](activity) trong [1h20m30s](timer)
+    - nhắc tôi [đăng ký tư vấn](activity) trong [1h20m30s](timer)
+    - nhắc tôi [đi học](activity) trong [1h20m30s](timer)
+    - nhắc tôi [đi chơi](activity) trong [1h23m12s](timer)
+    - nhắc tôi [ăn sáng](activity) trong [12h20m30s](timer)
+    - nhắc tôi [nhắn tin](activity) trong [1h34m30s](timer)
+    - nhắc tôi [gọi điện](activity) trong [6h45m30s](timer)
+
+- intent: request_cancel_reminder
+  examples: |
+    - hủy nhắc
+    - hủy lời nhắc
+    - hủy hẹn
+    - hủy lịch hẹn
+    - khỏi nhắc nữa
+    - hủy reminder
+    - hủy báo thức
+
+- intent: request_personal_info
+  examples: |
+    - cho xin thông tin của tôi
+    - gửi thông tin của tôi
+    - bạn biết gì về tôi?
+    - tôi là ai?
+    - thông tin về tôi
+    - thông tin của tôi
+    - thông tin cá nhân của tôi
+
+- intent: provide_mood
+  examples: |
+    - hơi [buồn](user_mood)
+    - [buồn](user_mood)
+    - [căng thẳng](user_mood)
+    - [chán](user_mood)
+    - rất [buồn](user_mood)
+    - [tuyệt vọng](user_mood)
+    - [không rõ](user_mood)
+    - đang cảm thấy [chán nản](user_mood)
+    - cảm thấy [buồn](user_mood)
+    - cảm giác [vui](user_mood)
+    - thấy [tuyệt vời](user_mood)
+    - thấy [khổ]
+    - đời là bể [khổ]
+
+- intent: provide_timer
+  examples: |
+    - [1h20m30s](timer)
+    - [0h30m00s](timer)
+    - [10h50m30s](timer)
+    - [0h19m45s](timer)
+    - [1h55m00s](timer)
+    - [9h54m59s](timer)
+
+- intent: too_tired
+  examples: |
+    - đi làm mệt quá
+    - mệt quá
+    - đi học mệt quá
+    - đi làm bị lao lực
+    - lao lực
+    - đuối
+    - mỏi tay
+    - mỏi chân
+    - mỏi mắt
+    - đau chân
+    - đau tay
+    - đau đầu
+    - nhức đầu
+
+- intent: show_id #automatically sent at the begining of a conversation session
+  examples: |
+    - [6258e2b0ee1e676f8626d4bd](userId)
+    - [6258e6f97e3ee0d7819b5ac1](userId)
+    - [626547cbd065c9a12a47e1eb](userId)
+
+- synonym: tập thể dục
+  examples: |
+    - tập thể hình
+    - workout
+    - tập thể thao
+    - tập workout
+    - luyện tập thể dục thể thao
+
+
+
 # - synonym: không
 #   examples: |
 #     - ko

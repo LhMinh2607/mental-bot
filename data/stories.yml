@@ -1,11 +1,9 @@
-version: "2.0"
+version: "3.0"
 
 stories:
 
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_great
   - action: utter_happy
 
@@ -34,8 +32,6 @@ stories:
 
 - story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -44,8 +40,6 @@ stories:
 
 - story: sad path 2
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -56,6 +50,7 @@ stories:
   steps:
   - intent: mood_suicide
   - action: utter_prevent_suicide
+  - action: action_note_mood
   - action: utter_did_that_help
   - intent: deny
   - action: utter_sorry
@@ -64,6 +59,7 @@ stories:
   steps:
   - intent: mood_suicide
   - action: utter_prevent_suicide
+  - action: action_note_mood
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
@@ -90,3 +86,29 @@ stories:
   - action: action_send_picture
   - intent: deny
   - action: utter_happy
+
+- story: reminder 1
+  steps:
+  - intent: ask_for_reminder
+  - action: action_set_reminder
+  
+
+- story: reminder 2
+  steps:
+  - intent: request_cancel_reminder
+  - action: action_cancel_reminder
+
+- story: show user info
+  steps:
+  - intent: request_personal_info
+  - action: action_show_user_info
+
+- story: ask for mood
+  steps:
+  - intent: provide_mood
+  - action: action_note_mood
+
+- story: ask for mood 2
+  steps:
+  - intent: provide_mood
+  - action: action_note_mood
