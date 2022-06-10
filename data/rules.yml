@@ -1,4 +1,4 @@
-version: "3.0"
+version: "2.0"
 
 rules:
 - rule: welcome user
@@ -6,7 +6,9 @@ rules:
   steps:
   - intent: show_id
   - action: action_initial_greeting
+  - action: action_follow_up_mood
   - action: utter_ask_for_mood
+  wait_for_user_input: false
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -23,7 +25,116 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: ask for issue if user provides unhappy mood
+  steps:
+  - intent: provide_unhappy_mood
+  - action: action_note_mood
+  - action: utter_ask_for_issue
+
+# - rule: sad path 1 sad issue
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_dead_relative_issue
+#   - action: action_note_issue
+#   # - action: utter_ask_for_more_issue
+#   # - intent: provide_dead_relative_issue
+#   # - action: action_note_issue
+#   - action: utter_address_dead_relative_issue
+
+# - rule: sad path 1 abusing issue
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_abusing_issue
+#   - action: action_note_issue
+#   - action: utter_address_abusing_issue
+
+# - rule: sad path 1 pressure_from_work issue
+#   steps:
+#   - intent: provide_pressure_from_work_issue
+#   - action: action_note_issue
+#   - action: utter_address_pressure_from_work_issue
+
+
+
 # - rule: Say 'Tôi là MentalBot' anytime the user challenges
 #   steps:
 #   - intent: bot_challenge
 #   - action: utter_iamabot
+
+
+- rule: dumb bot
+  steps:
+  - intent: dumb_bot
+  - action: utter_dumb_bot_defense
+  - action: utter_apologize
+  - action: utter_remind_to_send_feedback
+
+- rule: clever bot
+  steps:
+  - intent: clever_bot
+  - action: utter_clever_bot_response
+
+- rule: thanks
+  steps:
+  - intent: thanks
+  - action: utter_repsonse_to_thanks
+  - action: utter_ready_to_help
+
+- rule: apologize
+  steps:
+  - intent: apologize
+  - action: utter_response_to_apology
+
+- rule: hits bot
+  steps:
+  - intent: hit_bot
+  - action: utter_response_to_hit_bot
+
+# - rule: being hit
+#   steps:
+#   - intent: being_hit
+#   - action: utter_response_to_being_hit
+
+- rule: ask for well being
+  steps:
+  - intent: ask_for_wellbeing
+  - action: utter_response_to_wellbeing_question
+
+
+##loop
+# - rule: ask for help with anxiety (generic) 1
+#   steps:
+#   - intent: ask_for_help_in_reducing_anxiety
+#   - action: utter_help_with_ways_to_reduce_anxiety
+#   - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+#   - checkpoint: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+
+# - rule: ask for help with anxiety (generic) 2
+#   steps:
+#   - checkpoint: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+#   - intent: affirm
+#   - checkpoint: utter_help_with_ways_to_reduce_anxiety
+#   # - checkpoint: action_consult_with_generic_anxiety
+
+# - rule: ask for help with anxiety (generic) 23
+#   steps:
+#   - checkpoint: utter_help_with_ways_to_reduce_anxiety
+#   - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+#   - checkpoint: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+
+# - rule: ask for help with anxiety (generic) 3
+#   steps:
+#   - checkpoint: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+#   - intent: deny
+#   - action: utter_affirm
+
+# - rule: affirmation
+#   steps:
+#   - intent: affirm
+#   # - slot_was_set:
+#   #   - loop: ok
+#   - action: utter_affirm

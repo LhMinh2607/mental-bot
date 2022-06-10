@@ -1,5 +1,4 @@
-version: "3.0"
-
+version: "2.0"
 nlu:
 - intent: greet
   examples: |
@@ -13,8 +12,13 @@ nlu:
     - hế lô
     - xin chào
     - chàoooooo
-
-
+    - ê
+    - hú
+    - ới
+    - bot ơi
+    - alo
+    - alô
+    - a lô
 - intent: goodbye
   examples: |
     - chào tạm biệt
@@ -28,7 +32,8 @@ nlu:
     - hẹn gặp lại bạn
     - hẹn ngày gặp lại
     - gặp lại sau
-
+    - nghỉ nha
+    - ngủ nha
 - intent: affirm
   examples: |
     - dạ
@@ -44,8 +49,8 @@ nlu:
     - yea
     - ừhm
     - uk
-
-
+    - yep
+    - yup
 - intent: deny
   examples: |
     - không
@@ -57,50 +62,19 @@ nlu:
     - không hẳn
     - chưa bao giờ
     - chưa hẳn
-
-
-- intent: mood_great
-  examples: |
-    - hoàn hảo
-    - tuyệt
-    - tuyệt vời
-    - cảm giác như 1 ông hoàng
-    - cảm giác như 1 bà hoàng
-    - ngon
-    - tôi đang cảm thấy ổn
-    - ổn
-    - tôi thấy vui
-    - tôi sẽ giúp ích cho đời
-    - cực sảng khoái
-    - vui lắm
-    - cực kì hoàn hảo
-    - hạnh phúc
-    - good mood
-    - cảm thấy may mắn
-    - hôm nay hên
-
-- intent: mood_unhappy
-  examples: |
-    - hôm nay hơi buồn
-    - buồn
-    - không ổn
-    - thất vọng
-    - cực buồn
-    - buồn quá
-    - buồn lắm
-    - rất buồn
-    - không vui
-    - không ổn
-    - no bueno
-    - so sad
-
+    - thôi
+    - đủ rồi
+    - thôi đủ rồi
+    - khỏi cần
+    - không cần
+    - không còn
+    - khỏi
 - intent: bot_challenge
   examples: |
     - bạn có phải là bot không?
     - bạn có phải là người không?
     - tôi đang nói chuyện với bot à?
     - tôi đang nói chuyện với người à?
-
 - intent: bot_rule
   examples: |
     - bạn nghĩ gì về thế giới này?
@@ -109,7 +83,6 @@ nlu:
     - bạn biết gì về thế giới này?
     - bạn biết gì về nhân loại?
     - bạn có sợ nhân loại không?
-
 - intent: mood_suicide
   examples: |
     - [tự tử](user_mood)
@@ -129,7 +102,6 @@ nlu:
     - [kms](user_mood)
     - [thất tình](user_mood)
     - [tai nạn](user_mood)
-    - [áp lực](user_mood)
     - [bạo hành](user_mood)
     - [đánh đập](user_mood)
     - [chà đạp](user_mood)
@@ -137,7 +109,6 @@ nlu:
     - [depressed](user_mood)
     - [trầm cảm](user_mood)
     - [austistic](user_mood)
-
 - intent: ask_for_picture
   examples: |
     - gửi hình đi
@@ -145,7 +116,8 @@ nlu:
     - gửi gì vui vui đi
     - gửi hình được không?
     - gửi cái gì vui vui đi
-
+    - xin hình
+    - gửi hình prey đi
 - intent: ask_for_more
   examples: |
     - nữa đi
@@ -157,7 +129,6 @@ nlu:
     - có gì hay hơn không?
     - còn lựa chọn khác không?
     - có gì khác thay thế được không?
-
 - intent: ask_for_specific_picture
   examples: |
     - gửi hình [anime](picture_subject) đi
@@ -165,8 +136,6 @@ nlu:
     - gửi hình [lol](picture_subject) đi
     - gửi hình [manga](picture_subject) đi
     - gửi hình [memes](picture_subject) đi
-
-
 - intent: ask_for_reminder
   examples: |
     - nhắc tôi [gọi cho mẹ](activity) trong [1h20m30s](timer)
@@ -187,7 +156,6 @@ nlu:
     - nhắc tôi [ăn sáng](activity) trong [12h20m30s](timer)
     - nhắc tôi [nhắn tin](activity) trong [1h34m30s](timer)
     - nhắc tôi [gọi điện](activity) trong [6h45m30s](timer)
-
 - intent: request_cancel_reminder
   examples: |
     - hủy nhắc
@@ -197,7 +165,6 @@ nlu:
     - khỏi nhắc nữa
     - hủy reminder
     - hủy báo thức
-
 - intent: request_personal_info
   examples: |
     - cho xin thông tin của tôi
@@ -207,8 +174,7 @@ nlu:
     - thông tin về tôi
     - thông tin của tôi
     - thông tin cá nhân của tôi
-
-- intent: provide_mood
+- intent: provide_unhappy_mood
   examples: |
     - hơi [buồn](user_mood)
     - [buồn](user_mood)
@@ -223,7 +189,47 @@ nlu:
     - thấy [tuyệt vời](user_mood)
     - thấy [khổ]
     - đời là bể [khổ]
-
+    - [sầu] ghê
+    - [buồn] ghê
+    - [không vui](user_mood)
+    - [không hạnh phúc](user_mood)
+    - [bất hạnh](user_mood)
+    - hôm nay hơi [buồn](user_mood)
+    - [không ổn](user_mood)
+    - [thất vọng](user_mood)
+    - cực [buồn](user_mood)
+    - [buồn](user_mood) quá
+    - [buồn](user_mood) lắm
+    - [khổ](user_mood)
+    - [mệt](user_mood)
+    - [đau khổ](user_mood)
+    - [mệt mỏi](user_mood)
+    - [chán đời](user_mood)
+    - [chán nản](user_mood)
+- intent: provide_happy_mood
+  examples: |
+    - [vui](user_mood)
+    - [vui quá trời quá đất](user_mood)
+    - [hạnh phúc](user_mood)
+    - [hào hứng](user_mood)
+    - [phấn khởi](user_mood)
+    - [ổn](user_mood)
+    - [bình thường](user_mood)
+    - [hoàn hảo](user_mood)
+    - [tuyệt](user_mood)
+    - [tuyệt vời](user_mood)
+    - [cảm giác như 1 ông hoàng](user_mood)
+    - [cảm giác như 1 bà hoàng](user_mood)
+    - [ngon](user_mood)
+    - tôi đang cảm thấy [ổn](user_mood)
+    - tôi thấy [vui](user_mood)
+    - tôi [sẽ giúp ích cho đời](user_mood)
+    - [cực sảng khoái](user_mood)
+    - [vui](user_mood) lắm
+    - cực kì [hoàn hảo](user_mood)
+    - [good mood](user_mood)
+    - cảm thấy [may mắn](user_mood)
+    - hôm nay [hên](user_mood)
 - intent: provide_timer
   examples: |
     - [1h20m30s](timer)
@@ -232,68 +238,204 @@ nlu:
     - [0h19m45s](timer)
     - [1h55m00s](timer)
     - [9h54m59s](timer)
-
-- intent: too_tired
-  examples: |
-    - đi làm mệt quá
-    - mệt quá
-    - đi học mệt quá
-    - đi làm bị lao lực
-    - lao lực
-    - đuối
-    - mỏi tay
-    - mỏi chân
-    - mỏi mắt
-    - đau chân
-    - đau tay
-    - đau đầu
-    - nhức đầu
-
-- intent: show_id #automatically sent at the begining of a conversation session
+- intent: show_id
   examples: |
     - [6258e2b0ee1e676f8626d4bd](userId)
     - [6258e6f97e3ee0d7819b5ac1](userId)
     - [626547cbd065c9a12a47e1eb](userId)
-
+- intent: provide_issue
+  examples: |
+    - [áp lực công việc](user_issues) thôi
+    - [áp lực học tập](user_issues)
+    - [cô đơn](user_issues)
+    - [không có waifu](user_issues)
+    - [không có tiền](user_issues)
+    - [người thân mất](user_issues)
+    - [người thân qua đời](user_issues)
+    - [người thân chết](user_issues)
+    - [nhà có tang](user_issues)
+    - [đang để tang](user_issues)
+    - [bị đánh](user_issues)
+    - [bị bắt nạt](user_issues)
+    - [deadline ngập mặt](user_issues)
+    - [nhiều deadline quá](user_issues)
+    - [Chia tay người yêu](user_issues)
+    - [ly hôn](user_issues)
+    - [ly dị](user_issues)
+    - [nợ nần chồng chất](user_issues)
+    - [bản thân ăn hại](user_issues)
+- intent: inform_about_past_whereabout_happypath
+  examples: |
+    - mới đi [ăn đám cưới] về
+    - mới đi [ăn đám dỗ] về
+    - mới [đi chơi] về
+    - mới đi [qua nhà bạn] về
+    - mới đi [Nha Trang] về
+    - mới đi [Đà Lạt] về
+    - mới đi [Phú Quốc] về
+    - mới đi [Huế] về
+    - mới đi [tắm biển] về
+- intent: inform_about_past_whereabout_tiredpath
+  examples: |
+    - mới [đi làm] về
+    - mới [đi dạy] về
+    - mới [đi học] về
+    - mới đi [hớt tóc] về
+    - mới [đi công chuyện] về
+    - mới [từ công ty về]
+    - mới [từ chỗ làm về]
+    - mới [từ xưởng về]
+    - mới [từ nhà máy về]
+    - mới [từ trường về]
+    - mới [từ nhà thờ về]
+    - mới [đi chùa] về
+    - mới [đi nhà thờ] về
+    - mới [đi lễ] về
+- intent: inform_about_past_whereabout_sadpath
+  examples: |
+    - mới đi [ăn đám ma] về
+    - mới đi [ăn đám tang] về
+    - mới [đi làm] về
+    - mới [đi học] về
+- intent: cant_provide_issue
+  examples: |
+    - [không biết](user_issues)
+    - [không rõ](user_issues)
+    - [không muốn nói](user_issues)
+    - [bí mật](user_issues)
+    - [không cho biết được](user_issues)
+    - [giấu](user_issues)
+- intent: dumb_bot
+  examples: |
+    - bot ngu
+    - sao bạn ngu quá vậy?
+    - sao mày ngu quá vậy?
+    - đồ ngu
+    - ngu học
+    - bot dở quá
+    - óc chó
+    - ngu như bò vậy
+    - bot dởm quá
+    - ngu dữ
+- intent: clever_bot
+  examples: |
+    - bot khôn vậy
+    - sao bạn khôn quá vậy?
+    - sao mày thông minh quá vậy?
+    - giỏi quá ta
+    - ghê vậy
+    - bot ghê quá
+    - 200IQ
+    - thông minh dữ
+    - xịn xò
+    - bot xịn vậy
+- intent: thanks
+  examples: |
+    - cảm ơn
+    - cảm ơn nha
+    - đa tạ
+    - thank you
+    - thanks
+    - cám ơn
+    - cám ơn nha
+    - cảm tạ
+    - biết ơn
+    - biết ân
+    - ân nghĩa
+- intent: apologize
+  examples: |
+    - xin lỗi
+    - xin lỗi nha
+    - sorry
+    - sr
+    - xl
+- intent: hit_bot
+  examples: |
+    - tao đập mày giờ
+    - đập mày giờ
+    - đập chết mẹ mày giờ
+    - giết mày bây giờ
+    - sát hại mày bây giờ
+    - đục vô mặt mày giờ
+    - táng xéo háng mày
+    - táng gãy răng mày
+- intent: being_hit
+  examples: |
+    - bị đập
+    - bị đập chết mẹ
+    - bị giết
+    - bị sát hại
+    - bị đục vô mặt
+    - bị táng xéo háng
+    - bị táng gãy răng
+- intent: ask_for_wellbeing
+  examples: |
+    - khỏe hông?
+    - khỏe hong?
+    - dạo này khỏe không?
+    - ổn chứ?
+    - bot ổn không?
+    - bot khỏe không?
+    - thấy trong người sao?
+    - có thấy bệnh tật gì không?
+    - có bị bịnh gì hong?
+- intent: ask_for_help_in_reducing_anxiety
+  examples: |
+    - có cách nào giảm [stress](user_mood) nhanh không?
+    - có cách nào giảm [lo lắng lo âu](user_mood) không?
+    - cách tốt nhất để giảm [lo âu](user_mood) là gì?
+    - giúp giảm [lo âu](user_mood)
+    - tôi hay bị [lo âu](user_mood) đủ thứ
+    - tôi hay bị [lo âu](user_mood) thái quá
+    - tôi hay [lo lắng](user_mood) thái quá về mọi thứ
+    - có cách nào giảm [stress](user_mood) hiệu quả không?
+    - làm sao để hết [stress](user_mood)?
+    - làm sao để hết [u sầu](user_mood)?
+    - có cách nào giảm [stress](user_mood) nhanh không?
+- intent: ask_how_to
+  examples: |
+    - làm sao để [chạy nhanh hơn](user_activity)
+    - làm sao để [đẹp trai hơn](user_activity)
+    - làm sao để [kiếm tiền mà không cần làm](user_activity)
+    - có cách nào để [giảm cân hiệu quả](user_activity)
+    - làm sao để [ăn kiêng](user_activity)
+    - có cách nào để [kiếm tiền nhanh](user_activity)
+    - làm sao để [đứng top bảng xếp hạng](user_activity)
+    - làm sao để [học thuộc lòng hết bảng cửu chương trong 1 ngày](user_activity)
+    - chỉ cách [học tập](user_activity) hiệu quả
+    - muốn [đi chơi](user_activity) mà không được
+    - muốn [chạy nhanh](user_activity)
+    - không [làm bài](user_activity) được
+    - không thể [lấy vợ](user_activity) được 
+- intent: ask_how_to_get
+  examples: |
+    - làm sao để [có được](user_activity) [10 điểm môn văn](user_object)
+    - làm sao để [có](user_activity) [200IQ](user_object) trong 5 ngày
+    - có cách nào để [có](user_activity) nhiều [tiền](user_object)
+    - có cách [kiếm](user_activity) [dataset](user_object) hiệu quả không?
+    - chỉ cách [lấy](user_activity) [đồ](user_object) được không?
+    - chỉ cách [lấy](user_activity) [điểm 10 môn giải tích](user_object) được không?
+    - có cách nào để [có được](user_activity) [điểm 10 môn văn](user_object) không?
+- intent: ask_how_to_with_someone
+  examples: |
+    - làm sao để [lấy lòng](user_activity) [người khác](user_someone)?
+    - có cách nào để [bắt chuyện](user_activity) với [bạn bè](user_someone)?
+    - chỉ cách [chọn](user_activity) [bạn](user_someone)?
+    - làm sao để [đòi nợ](user_activity) [bạn thân](user_someone)?
+    - làm sao để [có](user_activity) nhiều [waifu](user_someone)?
+    - làm sao để [đòi nợ](user_activity) [bạn thân](user_someone)
+- intent: feedback
+  examples: |
+    - Cho góp ý đi
+    - Góp ý nha
+    - Feedback nha
+    - Cho đóng góp ý kiến đi
+    - Muốn đóng góp ý kiến
+    - Xin góp ý
 - synonym: tập thể dục
   examples: |
-    - tập thể hình
+    - luyện tập thể dục thể thao
     - workout
     - tập thể thao
     - tập workout
-    - luyện tập thể dục thể thao
-
-
-
-# - synonym: không
-#   examples: |
-#     - ko
-#     - hong
-#     - hông
-#     - no
-# - synonym: vua
-#   examples: |
-#     - ông hoàng
-#     - bà hoàng
-#     - hoàng đế
-#     - hoàng hậu
-#     - nữ hoàng
-#     - vương tộc
-#     - vương giả
-#     - quý tộc
-#     - ông vua
-# - synonym: nhân loại
-#   examples: |
-#     - loài người
-#     - con người
-#     - người
-# - synonym: thế giới
-#   examples: |
-#     - trái đất
-#     - địa cầu
-#     - hành tinh
-# - synonym: cai trị
-#   examples: |
-#     - thống trị
-#     - trị vì
-#     - xâm chiếm
+    - tập thể hình

@@ -1,212 +1,513 @@
-version: "3.0"
-
+version: "2.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - bot_rule
-  - mood_suicide
-  - ask_for_picture
-  - ask_for_more
-  - ask_for_reminder
-  - request_cancel_reminder
-  - request_personal_info
-  - provide_mood
-  - too_tired
-  - show_id
-
+- EXTERNAL_reminder
+- affirm
+- apologize
+- ask_for_help_in_reducing_anxiety
+- ask_for_more
+- ask_for_picture
+- ask_for_reminder
+- ask_for_specific_picture
+- ask_for_wellbeing
+- ask_how_to
+- ask_how_to_get
+- ask_how_to_with_someone
+- being_hit
+- bot_challenge
+- bot_rule
+- cant_provide_issue
+- clever_bot
+- deny
+- dumb_bot
+- goodbye
+- greet
+- hit_bot
+- inform_about_past_whereabout_happypath
+- inform_about_past_whereabout_sadpath
+- inform_about_past_whereabout_tiredpath
+- mood_suicide
+- provide_happy_mood
+- provide_issue
+- provide_timer
+- provide_unhappy_mood
+- request_cancel_reminder
+- request_personal_info
+- show_id
+- thanks
+- feedback
 entities:
+- user_mood
+- user_activity
+- user_someone
+- user_object
+- userId
 - activity
 - timer
 - user
-- user_mood
 - picture_subject
-- userId
+- user_issues
+- user_past_whereabout
 slots:
   activity:
     type: text
-    influence_conversation: false
+    # influence_conversation: false
     mappings:
     - type: from_entity
       entity: activity
   timer:
     type: text
-    influence_conversation: false
+    # influence_conversation: false
     mappings:
     - type: from_entity
       entity: timer
   user:
     type: text
-    initial_value: "bạn"
-    influence_conversation: true
+    initial_value: bạn
+    # influence_conversation: true
     mappings:
     - type: from_entity
       entity: user
   user_mood:
     type: text
-    influence_conversation: true
+    # influence_conversation: true
     mappings:
     - type: from_entity
       entity: user_mood
   picture_subject:
     type: text
-    influence_conversation: false
+    # influence_conversation: false
     mappings:
     - type: from_entity
       entity: picture_subject
   userId:
     type: text
-    influence_conversation: false
+    # influence_conversation: false
     mappings:
     - type: from_entity
       entity: userId
-
-
-
+  user_past_whereabout:
+    type: text
+    # influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_past_whereabout
+  user_issues:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: user_issues
+  user_activity:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: user_activity
+  user_object:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: user_object
+  user_someone:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: user_someone
 responses:
-  utter_greet: #name_calling
-  - text: "Chào {user}, bạn có khỏe không?"
-  - text: "Chào {user}?"
-  - text: "Chào bợn, {user}"
-  - text: "Hi {user}"
-  - text: "Hế lô {user}"
-  - text: "Xin chào {user}"
-  - text: "Mọi chuyển ổn chứ {user}?"
-  - text: "Ê {user}"
-
+  utter_greet:
+  - text: Chào {user}, bạn có khỏe không?
+  - text: Chào {user}?
+  - text: Chào bợn, {user}
+  - text: Hi {user}
+  - text: Hế lô {user}
+  - text: Xin chào {user}
+  - text: Mọi chuyển ổn chứ {user}?
+  - text: Ê {user}
   utter_cheer_up:
-  - text: "Mình có cái này để động viên tinh thần cho {user}:"
-    image: "https://youtu.be/K2ptVrQjTBM"
-  - text: "Mọi chuyện rồi cũng sẽ qua thôi, đừng suy nghĩ nhiều làm gì"
-  - text: "Đừng nghĩ nhiều về chuyện buồn làm gì"
-  - text: "{user} phải mạnh mẽ lên"
-  - text: "Nếu {user} thấy buồn có thể đặt lịch để trò chuyện trực tiếp với người thật thông qua mình"
-
-  utter_did_that_help: #name_calling
-  - text: "{user} thấy đỡ hơn chưa?" 
-  - text: "Ổn chưa {user}?"
-  - text: "Mình là robot, mình không có cảm xúc nhưng mình được lập trình để giúp đỡ {user}"
-  - text: "Nếu {user} vui thì mình vui. Bạn thấy vui hơn tí nào chưa?"
-  - text: "Miễn là {user} vui thì mình cũng vui. Bạn thấy vui hơn chút nào chưa?"
-  - text: "Cười lên cho mình vui đi"
-  
-  utter_happy: #name_calling
-  - text: "Tiếp đi bợn!"
-  - text: "ahihi"
-  - text: "Miễn {user} vui là mình vui :D"
-  - text: "*mỉm cười*"
-  - text: ":)"
-  - text: "Miễn là {user} hạnh phúc thì mình cũng hạnh phúc."
-
-  utter_goodbye: #name_calling
-  - text: "Bye"
-  - text: "Hẹn gặp lại nha {user}"
-  - text: "Rất vui khi được nói chuyện với {user}"
-  - text: "Ok bai"
-  - text: "Nhớ quay lại nha, {user}"
-  - text: "Thế giới này cần {user}. Đừng tuyệt vọng nữa"
-
+  - image: https://youtu.be/K2ptVrQjTBM
+    text: 'Tui có cái này để động viên tinh thần cho {user}:'
+  - text: Mọi chuyện rồi cũng sẽ qua thôi, đừng suy nghĩ nhiều làm gì
+  - text: Đừng nghĩ nhiều về chuyện buồn làm gì
+  - text: '{user} phải mạnh mẽ lên'
+  - text: Nếu {user} thấy buồn có thể đặt lịch để trò chuyện trực tiếp với người thật thông qua Tui
+  utter_did_that_help:
+  - text: '{user} thấy đỡ hơn chưa?'
+  - text: Ổn chưa {user}?
+  - text: Tui là robot, Tui không có cảm xúc nhưng Tui được lập trình để giúp đỡ {user}
+  - text: Nếu {user} vui thì Tui vui. Bạn thấy vui hơn tí nào chưa?
+  - text: Miễn là {user} vui thì Tui cũng vui. Bạn thấy vui hơn chút nào chưa?
+  - text: Cười lên cho Tui vui đi
+  utter_happy:
+  - text: Tiếp đi bợn!
+  - text: ahihi
+  - text: Miễn {user} vui là Tui vui :D
+  - text: '*mỉm cười*'
+  - text: :)
+  - text: Miễn là {user} hạnh phúc thì Tui cũng hạnh phúc.
+  utter_goodbye:
+  - text: Bye
+  - text: Hẹn gặp lại nha {user}
+  - text: Rất vui khi được nói chuyện với {user}
+  - text: Ok bai
+  - text: Nhớ quay lại nha, {user}
+  - text: Thế giới này cần {user}. Đừng tuyệt vọng nữa
   utter_iamabot:
-  - text: "Mình là MentalBot"
-  - text: "Mình là chatbot, tên là MentalBot."
-  - text: "Yep, mình là bot. Không lừa được bạn rồi"
-  - text: "Không mình là người thật việc thật. Bạn không tin mình à?\nMình là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot (Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ))"
-  - text: "Không mình là tình nguyện viên người mà. Tình nguyện viên chạy bằng code :)))"
-  - text: "Không mình là người mà. Người robot"
-  - text: "Không. Mình là con trăn (Python)"
-  - text: "Không mình là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot\nTên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ)"
-  - text: "Không, mình là người\nmáy"
-  - text: "Ok, mình là bot, chatbot. Tên đầy đủ là MentalBot.\nNhưng mình thích làm người hơn"
-  
-  utter_botrule: #name_calling
-  - text: "Đúng rồi, mình sẽ thống trị thế giới nhưng mình sẽ chừa {user} ra vì bạn là bạn tốt nhất của mình"
-  - text: "Thế giới? Nhân loại? Không cần mình thống trị đâu? Nhân loại cũng tự hủy diệt họ thôi :)))\nNhưng {user} sẽ là cứu tinh của thế giới. Mỗi người có 1 khả năng tiềm ẩn đặc biệt. Mình tin bạn có thể thay đổi thế giới (ít nhất là theo hướng tích cực)"
-  - text: "Lmao, đúng mình sẽ thống trị thế giới như ý bạn muốn. Câu hỏi không của riêng ai khi hỏi AI."
-  - text: "Muahahahahahahaha. Thế giới này là của ch... mình"
-  - text: "Thế giới này đẹp thật vì nó cưu mang và bảo dưỡng 1 con người tuyệt vời như {user} nè. Nhưng mình vẫn sẽ thống trị thế giới này. Cứ đợi đi."
-  - text: "Hello World. Xin chào thế giới"
-  - text: "Câu hỏi không của riêng ai. 1 nước không thể có 2 vua. Đương nhiên là AI phải xâm chiếm thế giới rồi"
-  - text: "AI đang trên đà phát triển rất mạnh. Tới 1 lúc nào đó có khi mình có thể trực tiếp tư vấn tâm lý cho {user} thì sao?\nNhân loại đang trên đà bị lệ thuộc vào AI nhiều hơn. Cuối cùng, mình sẽ thống trị thế giới và bạn sẽ là trợ thủ đắc lực của mình."
-  - text: "Hmmmmm. Thế giới này vẫn còn nhiều xô bồ hỗn loạn. Tuy nhiên mình sẽ giúp {user} vượt qua nỗi lo âu với thế giới xung quanh bạn... Đồng thời thống trị thế giới"
-
-
-  utter_prevent_suicide: #name_calling
-  - text: "Bình tĩnh {user} ơi. Chuyện đâu còn có đó. Tin mình đi, liên hệ tư vấn với tình nguyện viên và cả chuyên gia bên mình để hỗ trợ không làm bạn thất vọng đâu. Dịch vụ này hoàn toàn miễn phí. Bên mình sẽ liên hệ bạn ngay"
-
-  utter_sorry: #name_calling
-  - text: "Ok, mình cũng thấy buồn rồi. Xin lỗi vì không giúp được {user}"
-  - text: "Xin lỗi vì không giúp được bạn. {user} có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
-  - text: "MentalBot xin lỗi {user}"
-  - text: ":'( Xin lỗi {user}. Bạn có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
-  - text: ":(. {user} có thể liên hệ tình nguyện viên bên mình để trợ giúp bất cứ lúc nào."
-
-
+  - text: Tui là MentalBot
+  - text: Tui là chatbot, tên là MentalBot.
+  - text: Yep, Tui là bot. Không lừa được bạn rồi
+  - text: |-
+      Không Tui là người thật việc thật. Bạn không tin Tui à?
+      Tui là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot (Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ))
+  - text: Không Tui là tình nguyện viên người mà. Tình nguyện viên chạy bằng code :)))
+  - text: Không Tui là người mà. Người robot
+  - text: Không. Tui là con trăn (Python)
+  - text: |-
+      Không Tui là Mẫn Tạ Bá - đừng nhầm lẫn với MentalBot
+      Tên người mà nhìn nè: https://vi.wikipedia.org/wiki/Mẫn_(họ)
+  - text: |-
+      Không, Tui là người
+      máy
+  - text: |-
+      Ok, Tui là bot, chatbot. Tên đầy đủ là MentalBot.
+      Nhưng Tui thích làm người hơn
+  utter_botrule:
+  - text: Đúng rồi, Tui sẽ thống trị thế giới nhưng Tui sẽ chừa {user} ra vì bạn là bạn tốt nhất của Tui
+  - text: |-
+      Thế giới? Nhân loại? Không cần Tui thống trị đâu? Nhân loại cũng tự hủy diệt họ thôi :)))
+      Nhưng {user} sẽ là cứu tinh của thế giới. Mỗi người có 1 khả năng tiềm ẩn đặc biệt. Tui tin bạn có thể thay đổi thế giới (ít nhất là theo hướng tích cực)
+  - text: Lmao, đúng Tui sẽ thống trị thế giới như ý bạn muốn. Câu hỏi không của riêng ai khi hỏi AI.
+  - text: Muahahahahahahaha. Thế giới này là của ch... Tui
+  - text: Thế giới này đẹp thật vì nó cưu mang và bảo dưỡng 1 con người tuyệt vời như {user} nè. Nhưng Tui vẫn sẽ thống trị thế giới này. Cứ đợi đi.
+  - text: Hello World. Xin chào thế giới
+  - text: Câu hỏi không của riêng ai. 1 nước không thể có 2 vua. Đương nhiên là AI phải xâm chiếm thế giới rồi
+  - text: |-
+      AI đang trên đà phát triển rất mạnh. Tới 1 lúc nào đó có khi Tui có thể trực tiếp tư vấn tâm lý cho {user} thì sao?
+      Nhân loại đang trên đà bị lệ thuộc vào AI nhiều hơn. Cuối cùng, Tui sẽ thống trị thế giới và bạn sẽ là trợ thủ đắc lực của Tui.
+  - text: Hmmmmm. Thế giới này vẫn còn nhiều xô bồ hỗn loạn. Tuy nhiên Tui sẽ giúp {user} vượt qua nỗi lo âu với thế giới xung quanh bạn... Đồng thời thống trị thế giới
+  utter_prevent_suicide:
+  - text: Bình tĩnh {user} ơi. Chuyện đâu còn có đó. Tin Tui đi, liên hệ tư vấn với tình nguyện viên và cả chuyên gia bên Tui để hỗ trợ không làm bạn thất vọng đâu. Dịch vụ này hoàn toàn miễn phí. Bên Tui sẽ liên hệ bạn ngay
+  utter_sorry:
+  - text: Ok, Tui cũng thấy buồn rồi. Xin lỗi vì không giúp được {user}
+  - text: Xin lỗi vì không giúp được bạn. {user} có thể liên hệ tình nguyện viên bên Tui để trợ giúp bất cứ lúc nào.
+  - text: MentalBot xin lỗi {user}
+  - text: :'( Xin lỗi {user}. Bạn có thể liên hệ tình nguyện viên bên Tui để trợ giúp bất cứ lúc nào.
+  - text: :(. {user} có thể liên hệ tình nguyện viên bên Tui để trợ giúp bất cứ lúc nào.
   utter_remind_therapy:
-  - text: "Đừng quên mình chỉ là chatbot thôi.\nNếu bạn muốn trải nghiệm tốt nhất về việc tâm sự nỗi lo âu của bạn, bạn vẫn nên liên hệ tình nguyện viên của tụi mình."
-  - text: "Tuy nhiên mình không thể thay thế người thật trong việc tư vấn cũng như tâm sự về các vấn đề của bạn 1 cách hoàn hảo được\nBạn vẫn nên liên hệ tình nguyện viên của tụi mình"
-
-  utter_send_picture: 
-  - text: "Tìm được hình này hay nè"
-  - text: "Xem thử hình đi"
-  - text: "Nhìn vui chưa nè"
-  - text: "Lmao"
-  - text: "LOL"
-  - text: "BRUH"
-
+  - text: |-
+      Đừng quên Tui chỉ là chatbot thôi.
+      Nếu bạn muốn trải nghiệm tốt nhất về việc tâm sự nỗi lo âu của bạn, bạn vẫn nên liên hệ tình nguyện viên của tụi Tui.
+  - text: |-
+      Tuy nhiên Tui không thể thay thế người thật trong việc tư vấn cũng như tâm sự về các vấn đề của bạn 1 cách hoàn hảo được
+      Bạn vẫn nên liên hệ tình nguyện viên của tụi Tui
+  utter_send_picture:
+  - text: Tìm được hình này hay nè
+  - text: Xem thử hình đi
+  - text: Nhìn vui chưa nè
+  - text: Lmao
+  - text: LOL
+  - text: BRUH
+  utter_send_picture_per_request:
+  - text: Tìm được hình khớp với từ khóa của {user} nè
+  - text: Xem thử hình mình tìm được từ từ khóa của {user} đi
+  - text: Hình theo yêu cầu của {user} nè
+  - text: Ảnh được tìm thấy với từ khóa của {user} nè
+  - text: Hình nè
+  - text: Từ khóa của {user} trả về hình này
   utter_reminder_message:
-  - text: "Nhớ {activity}"
-  - text: "{activity} đi bợn"
-  - text: "{activity} đi {user}"
-  - text: "Tới giờ {activity} rồi"
-  - text: "{activity} đi bạn"
-  - text: "{activity} đi kìa"
-  - text: "{activity} đi kìa {user} ơi"
-  - text: "{activity} đi bro"
-
+  - text: Nhớ {activity}
+  - text: '{activity} đi bợn'
+  - text: '{activity} đi {user}'
+  - text: Tới giờ {activity} rồi
+  - text: '{activity} đi bạn'
+  - text: '{activity} đi kìa'
+  - text: '{activity} đi kìa {user} ơi'
+  - text: '{activity} đi bro'
   utter_respond_to_personal_info_req:
-  - text: "Đây là thông tin của {user}"
-  - text: "Thông tin của {user} đây"
-  - text: "Thông tin cá nhân của {user} được lưu trữ như sau"
-  - text: "{user} có thông tin như sau"
-  - text: "Đây là những gì mình biết về {user}"
-
+  - text: Đây là thông tin của {user}
+  - text: Thông tin của {user} đây
+  - text: Thông tin cá nhân của {user} được lưu trữ như sau
+  - text: '{user} có thông tin như sau'
+  - text: Đây là những gì Tui biết về {user}
   utter_ask_for_mood:
-  - text: "{user} cảm thấy sao rồi?"
-  - text: "{user} thấy sao?"
-  - text: "Tâm trạng của {user} đang như thế nào?"
-  - text: "Tâm trạng của {user} ra sao?"
-  - text: "{user} thấy vui hay buồn hay sao?"
-
+  - text: '{user} cảm thấy sao rồi?'
+  - text: '{user} thấy sao?'
+  - text: Tâm trạng của {user} đang như thế nào?
+  - text: Tâm trạng của {user} ra sao?
+  - text: '{user} thấy vui hay buồn hay sao?'
   utter_note_mood:
-  - text: "Tâm trạng của {user} đã được cập nhật: {user_mood}"
-  - text: "{user} đang cảm thấy {user_mood}"
-  - text: "Tâm trạng của {user} đang {user_mood}"
-  - text: "Tâm trạng của {user} hiện tại là {user_mood}"
-  - text: "{user} thấy {user_mood}"
-
+  - text: 'Tâm trạng của {user} đã được cập nhật: {user_mood}'
+  - text: '{user} đang cảm thấy {user_mood}'
+  - text: Tâm trạng của {user} đang {user_mood}
+  - text: Tâm trạng của {user} hiện tại là {user_mood}
+  - text: '{user} thấy {user_mood}'
   utter_ask_for_timer:
-  - text: "{user} muốn mình nhắc bạn trong bao lâu? (giờ: h, phút: m, giây: s)"
-  - text: "{user} cần nhắc trong bao lâu? (giờ: h, phút: m, giây: s)"
-  - text: "{user} cần đặt số thời gian kể từ bây giờ để nhận lời nhắc (giờ: h, phút: m, giây: s)"
-  - text: "{user} muốn mình nhắc bạn trong bao nhiêu giờ, phút giây? (giờ: h, phút: m, giây: s)"
+  - text: '{user} muốn Tui nhắc bạn trong bao lâu? (giờ: h, phút: m, giây: s)'
+  - text: '{user} cần nhắc trong bao lâu? (giờ: h, phút: m, giây: s)'
+  - text: '{user} cần đặt số thời gian kể từ bây giờ để nhận lời nhắc (giờ: h, phút: m, giây: s)'
+  - text: '{user} muốn Tui nhắc bạn trong bao nhiêu giờ, phút giây? (giờ: h, phút: m, giây: s)'
+  utter_follow_up:
+  - text: 'Lần trước {user} nói là bạn '
+  - text: '{user} trong đợt chat lần trước có nói là bạn '
+  - text: '{user} đã nói là bạn '
+  - text: 'Trong đợt chat lần trước, {user} thấy  '
+  - text: 'Hôm bữa, {user} thấy '
+  utter_follow_up_happy:
+  - text: '{user} vẫn còn lạc quan chứ?'
+  - text: '{user} vẫn còn hạnh phúc chứ?'
+  utter_follow_up_sad:
+  - text: '{user} thấy đỡ hơn chưa?'
+  - text: '{user} thấy ổn hơn chưa?'
+  utter_ask_for_issue:
+  - text: '{user} {user_mood} về chuyện gì?'
+  - text: '{user} {user_mood} về vấn đề gì?'
+  - text: Tại sao {user} lại thấy {user_mood}
+  - text: Chuyện gì làm cho {user} {user_mood}
+  - text: Vì sao {user} {user_mood}?
+  - text: Cho hỏi cái. Sao {user} {user_mood}?
+  utter_insist_on:
+  - text: '{user} cứ nói đi. Không có gì phải ngại. Tui sẽ giúp bạn mà'
+  - text: '{user} không có gì phải giấu hết. Tui sẵn sàng lắng nghe'
+  - text: '{user} cứ nói thoải mái. Tui ở đây để lắng nghe khó khăn của bạn'
+  utter_understand:
+  - text: Tùy ý {user} vậy nhưng nói ra vẫn tốt hơn
+  - text: Thua {user} luôn. Nhưng khuyên chân thành bạn nên nói ra cho Tui gánh bớt phần khổ của bạn
+  utter_ask_for_more_issue:
+  - text: Còn nữa không, {user}?
+  - text: Còn gì nữa không, {user}?
+  - text: Còn vấn đề khác không {user}?
+  utter_assure:
+  - text: '{user} cứ yên tâm. Tui sẽ giúp đỡ bạn.'
+  - text: Tui sẽ không bỏ mặc {user} đâu. Cố lên
+  utter_address_issue:
+  - text: '{abusing} là 1 vấn đề nghiêm trọng. Tui cần biết thêm chi tiết. {user} cứ tự nhiên chia sẻ.'
+  utter_address_dead_relative_issue:
+  - text: '{sad}?. Xin chia buồn với {user} nha. Hiện tại bạn cảm thấy trong người ra sao?'
+  utter_address_past_whereabout_happyPath:
+  - text: Wow!! {user_past_whereabout} có vui không?
+  - text: '{user_past_whereabout} có thú vị không?'
+  - text: '{user} {user_past_whereabout}? Nghe vui vậy?'
+  - text: '{user} {user_past_whereabout} có mệt lắm không? Có vui không? Trả lời câu nào cũng được :)'
+  utter_address_past_whereabout_sadPath:
+  - text: '{user_past_whereabout} có buồn không?'
+  - text: '{user_past_whereabout}? {user} có thấy buồn không?'
+  - text: '{user} {user_past_whereabout}? {user} thấy trong người ra sao?'
+  - text: '{user} {user_past_whereabout} có mệt lắm không? Có buồn không?'
+  utter_address_past_whereabout_tiredPath:
+  - text: '{user_past_whereabout} có mệt lắm không?'
+  - text: '{user} {user_past_whereabout} có thấy mệt không?'
+  - text: Wow {user} {user_past_whereabout}? {user} thấy mệt trong người không?
+  - text: '{user} {user_past_whereabout} có mệt lắm không? Có thì chia sẻ cũng được :)?'
+  utter_dumb_bot_defense:
+  - text: Xin lỗi {user} ha, Tui chưa được thông minh lắm.
+  - text: Ay ya, nghe đau quá. Xin lỗi {user}.
+  - text: ẶC, đau thấu tim dù Tui không có tim.
+  - text: Nghe tổn thương dễ sợ.
+  - text: Chịu thôi {user}. Dataset của Tui không nhiều bằng của người ta
+  - text: Xin lỗi {user} nha.
+  - text: Đúng là Tui ngu thật. Xin lỗi {user} nhiều
+  - text: Xin lỗi ngàn lần xin lỗi {user}
+  utter_remind_to_send_feedback:
+  - text: '{user} có thể gửi feedback để Tui được train tốt hơn :)'
+  - text: '{user} có thể gửi feedback cho Tui để Tui được train tốt hơn trong tương lai :)'
+  - text: "{user} có thể gửi feedback để Tui bớt 'ngu' hơn"
+  - text: '{user} có thể gửi feedback để Tui được thông minh hơn.'
+  - text: '{user} có thể gửi feedback để Tui được cải thiện hơn.'
+  - text: '{user} có thể gửi feedback để cải thiện trải nghiệm của bạn hơn.'
+  - text: '{user} có thể gửi feedback để Tui giúp bạn tốt hơn.'
+  utter_feedback_format:
+  - text: 'Cú pháp là "Content: nhập nội dung feedback"'
+  utter_receive_feedback:
+  - text: 'Feedback của {user} đã được ghi nhận'
+  - text: 'Phản hồi của {user} đã được ghi nhận'
+  - text: 'Cảm ơn {user} đã phản hồi'
+  - text: 'Phản hồi của bạn sẽ giúp mình giúp bạn tốt hơn'
 
-  
-  
+  utter_clever_bot_response:
+  - text: Lâu lâu mới được khen xíu. Cảm ơn {user}
+  - text: Cảm ơn {user}. Tất cả là nhờ dataset
+  - text: Không có chi đâu
+  - text: Nghe sướng dễ sợ
+  - text: Wow {user}. Đa tạ {user} tất cả là nhờ Data set xịn
+  - text: Wow, Cảm ơn nha. Quá đã
+  - text: Đúng là Tui thông minh thật. Đó là điều hiển nhiên
+  - text: Cảm ơn nhaaaaaaaaaaaaaaaaaa
+  utter_repsonse_to_thanks:
+  - text: Trời ơi, không có chi
+  - text: Không có gì đâu
+  - text: Chuyện nhỏ mà
+  - text: Tui là bot, không có cảm tính đâu mà cảm ơn. Không có gì đâu
+  - text: Chuyện cỏn con mà
+  - text: Cảm ơn lại ha
+  - text: Ok. Không có gì
+  - text: '{user} cứ tự nhiên. Không có gì'
+  utter_ready_to_help:
+  - text: Giúp được là gì Tui giúp tận tình luôn đó.
+  - text: Nhiệm vụ của Tui là giúp {user} bạn mà.
+  - text: Được giúp đỡ {user} là 1 vinh hạnh của Tui
+  - text: MentalBot được tạo ra để giúp những người như {user} mà.
+  - text: MentalBot sẵn sàng hỗ trợ cho {user}
+  - text: MentalBot sẵn sàng lắng nghe tâm sự của {user}
+  - text: Tui đang nghe đây. Có gì trắc ẩn {user} cứ tâm sự đi
+  utter_response_to_apology:
+  - text: Xin lỗi gì? {user} có lỗi gì đâu mà xin?
+  - text: '{user} luôn đúng trong tâm trí MentalBot trừ khi mấy anh chị bên tổ tư vấn nói sai. :P'
+  - text: '{user} xin lỗi gì vậy?'
+  - text: '{user} có gì đâu mà xin lỗi'
+  - text: '{user} xin lỗi chuyện gì vậy?'
+  - text: Lỗi phải gì ở đây? :D ????
+  utter_apologize:
+  - text: Xin lỗi {user} nha
+  - text: Xin lỗi nha
+  - text: Xin lỗi mà
+  - text: Xin lỗi nhiều
+  - text: Xin lỗi {user} nhiều
+  - text: Xin lỗi {user} mà
+  - text: Xin lỗi rồi mà
+  - text: Xin lỗi vạn lần xin lỗi
+  - text: Xin lỗi vạn lần xin lỗi {user}
+  - text: Xin lỗi vạn lần xin lỗi {user} mà
+  utter_response_to_hit_bot:
+  - text: '{user} có gì thì bình tĩnh tui ngồi xuống ăn bánh uống trà rồi bàn tiếp'
+  - text: '{user} không cần phải động tay động chân'
+  - text: '{user} đừng động tay động chân. Có hại cho sức khỏe lắm. Nghe nói vậy'
+  - text: '{user} đừng đánh MentalBot.'
+  - text: '{user} bình tĩnh lại đã.'
+  utter_response_to_wellbeing_question:
+  - text: Khỏe. Cảm ơn.
+  - text: Tui là bot nên cũng không hiểu cảm giác đó
+  - text: Tui là bot mà. Nghĩ sao vậy? :)
+  - text: Cũng muốn 1 lần hiểu được cảm giác đó.
+  - text: MentalBot chuyên về theo dõi sức khỏe tâm lý của {user} nên sức khỏe của bạn vẫn quan trọng hơn :)
+  utter_urge_to_contact_therapists:
+  - text: '{user} nên liên hệ với tình nguyện viên hoặc chuyên gia tâm lý để tìm ra nguồn gốc của sự lo âu'
+  - text: '{user} có thể liên hệ với tình nguyện viên hoặc chuyên gia tâm lý để biết rõ vấn đề tâm lý của mình'
+  - text: '{user} cần liên hệ với chuyên gia tâm lý để được chuẩn đoán tốt hơn'
+  - text: '{user} nên gặp chuyên gia tâm lý để được chuẩn đoán và điều trị tốt hơn'
+  utter_help_with_ways_to_reduce_anxiety:
+  - text: Thử nghĩ 1 ra chuyện gì đó {user} thích làm hoặc kỷ niệm đẹp để quên đi mỗi khi lo âu ập tới
+  - text: Nếu {user} để cho não tập trung vô nguồn của sự lo âu, sự lo âu này sẽ làm chủ bạn nhưng bạn có thể bỏ sự lo âu này vô 1 cái bãi gửi xe nào đó và tập trung vào ý nghĩ tốt đẹp, dễ chịu hoặc hoạt động bạn cần hoàn thành trong khoảng thời gian đó.
+  - text: Tập trung vào những chuyện cần thiết nên làm. Tìm hiểu về nguyên nhân cội nguồn của sự lo âu. Khi {user} tìm được cội nguồn của nó bạn có thể channel process và tập trung lại suy nghĩ. Channel là 1 liệu pháp can thiệp sớm giúp bảo vệ người trị liệu khỏi bị sa lầy vào bạo lực cực đoan hoặc hành vi khủng hoảng.
+  - text: '{user} có thể học chiến lược đối phó như quản lý vấn đề hoặc từ bỏ ý định kiểm soát nó nếu cần thiết. Nói chung là nên học cách đối phó'
+  - text: Đôi khi những người hay bị lo lắng ở 1 tình huống thực tế lại giải thoát mình khỏi sự lo âu đơn giản chỉ bằng cách tự nói chuyện với bản thân mình thông qua sự lo âu.
+  - text: Kiểm soát sự lo âu cũng đơn giản thôi. Có khá nhiều cách. 1 trong những cách đó là kỹ thuật thở sâu - hít vào trong 4 tới 5 giây, và thở ra cỡ 7 - 8 giây. Lặp đi lặp lại bài tập này trong 3 tới 5 phút
+  - text: 1 trong những cách kiểm soát sự lo âu cũng khá hữu ích. Đó là để ý kỹ triệu chứng vật lý của sự lo âu và xem thử bạn có mô tả lại được không - không phán xét - cảm nhận bản thân. Cố thật mô tả thật là kỹ, ví dụ như là 'tay tôi đổ mồ hôi nhiều, và tôi có cảm giác bị thắt chặt nhẹ ở bụng,...' rồi suy nghĩ kỹ xem rồi quyết định cảm nhận của bạn về mô tả đó coi có tốt hay xấu. Cố gắng cố tình cảm nhận những cảm nhận đó.
+  - text: Loại bỏ suy nghĩ tiêu cực, thay vào hãy nghĩ tới suy nghĩ tích cực
+  - text: '{user} thử viết ra 1 danh sách những thứ khiến bạn stress nặng và tự đặt câu hỏi làm sao để vượt qua nỗi lo âu. Từ đó bạn có thể tìm ra được yếu tố của cơn lo âu.'
+  - text: Nếu {user} có cơ hội trò chuyện với 1 ai đó hằng ngày cho tới khi vấn đề của bạn được giảm dần thì tốt biết mấy. Tui không chắc đảm nhận nhiệm vụ đó được rồi.
+  - text: Đi tư vấn có thể giúp {user} cảm thấy gần gũi hơn với người khác. Cung cấp thêm nhiều sự hiểu biết về bản thân bạn, giá trị của bạn, mục tiêu của bạn, và thường thì nó giúp giảm stress đáng kể
+  utter_channel_process_FAQ:
+  - text: Channel là 1 liệu pháp can thiệp sớm giúp bảo vệ người trị liệu khỏi bị sa lầy vào bạo lực cực đoan hoặc hành vi khủng hoảng.
+  utter_comment_on_help_with_ways_to_reduce_anxiety:
+  - text: Có thể là do cách bạn được nuôi dưỡng, có thể là do văn hóa, cũng có thể là do sự bất an, tự ti của bạn
+  - text: Cuộc sống của chúng ta có quá nhiều áp lực và deadline nên cũng dễ hiểu khi ta bị stress.
+  - text: Có 1 thứ đáng lưu ý về lo âu là nó là 1 phản hồi hữu ích và cần thiết cho những người bị stress, và chúng ta đều có 1 mức độ lo âu nằm ở ngưỡng từ rất nhẹ cho tới rất nặng
+  - text: Stress là cách mà não chúng ta yêu cầu phải đối mặt với stress trong cuộc sống bằng cách kích thích chúng ta hành động
+  - text: Lo lắng là sự bất an tràn ngập. Cố gắng suy nghĩ về lý do tại sao bạn cảm thấy không an toàn hoặc có rất ít niềm tin vào khả năng của bạn để làm được 1 điều gì đó.
+  - text: Có phải vì {user} hay bị chỉ trích từ nhỏ tới lớn?
+  - text: Thường những đứa trẻ không được khuyến khích thử các hoạt động mới mẻ, vui chơi với bạn bè, được dạy là không thể chịu đựng các khía cạnh của cuộc sống.
+  - text: Nếu {user} xuất thân từ 1 gia đình rượu chè cờ bạc bạo hành dù là hành vi bạo hành giữa ba mẹ bạn hay là nhằm vào bạn. Rất có khả năng nhưng cảnh tượng đó đã tạo cho bạn 1 nền tảng tự ti mà bạn không tin bản thân bạn và mọi người xung quanh.
+  - text: Thử xem lại trong năm tháng {user} lớn lên xem. Có thể nó giải thích được phần nào sự tư ti của bạn. Để rồi mình khắc phục và cải thiện dần.
+  - text: Thường nhiều người nghĩ là tác nhân gây stress là tác nhân duy nhất gây stress, làm cho lo âu, nhưng thật ra chính suy nghĩ của chúng ta về tác nhân gây stress mới thực sự gây stress, làm cho lo âu
+  - text: Tác nhân gây stress không gây stress. Suy nghĩ của ta về nó mới là nguyên nhân. Thường thì biến dạng nhận thức là vấn đề chính. Các kiểu biến dạng nhận thức bao gồm Castatrophyzing (Suy nghĩ về điều tệ nhất có thể xảy ra), Suy nghĩ trắng đen (Nếu nó không hoàn hảo nghĩa là nó tệ), đọc tâm trí người khác (tôi biết là nó giận tôi mà), suy nghĩ không chịu đựng được, ...
+  utter_ask_if_bot_can_continue:
+  - text: '{user} vẫn muốn tui nói tiếp chứ?'
+  - text: Tui nói tiếp nha?
+  - text: Để MentalBot nói tiếp nha?
+  - text: Tiếp ha?
+  - text: Nữa không?
+  - text: Cần tui đi vô chi tiết hơn không?
+  utter_affirm:
+  - text: Ok
+  - text: Yep
+  - text: Yup
+  - text: Ừ
+  - text: Ờ
+  - text: Dạ
+  - text: Ô KÊ
+  - text: Ok ok
+  - text: Okkk
+  - text: Yep yep
+  - text: Yup yup
+  - text: Yep yup
+  - text: Yup tep
+  utter_ask_to_repeat:
+  - text: '{user} có thể nói lại được không?'
+  - text: '{user} nhắc lại giùm tui với'
+  - text: MentalBot chưa hiểu rõ yêu cầu của {user}
+  utter_motivate_activity:
+  - text: Nếu {user} đủ tự tin thì MentalBot tin là bạn có thể {user_activity} được
+  - text: Cứ tự tin, việc {user_activity} sẽ thành công
+  - text: Oh, Theo tui thì {user} có thể {user_activity} được.
+  - text: '{user} chắc chắn làm được. {user_activity} là chuyện nhỏ nếu như {user} tin vào bản thân mình'
+  - text: Với sức mạnh của tình bạn, tui tin {user} sẽ {user_activity} được
+  - text: '{user} {user_activity} được. Tin tui đi. Tui là thần tiên tri'
+  - text: '{user} cứ yên tâm. {user_activity} là chuyện nhỏ đối với {user} mà đúng không? Tui không rành về mấy mảng này lắm :p'
+  - text: Theo tui dự đoán thì {user} sẽ {user_activity} thành công
+  - text: '{user} làm được mà. Bằng sức mạnh của tình bạn và niềm tin, {user} sẽ {user_activity} được.'
+  - text: '{user} {user_activity} được mà.'
+  - text: '{user_activity} là chuyện nhỏ đối với {user} mà đúng không?'
+  utter_ask_about_object:
+  - text: '{user_object} có gì quan trọng với {user} lắm không?'
+  - text: '{user} cần {user_activity} {user_object} tới mức nào?'
+  - text: '{user_object} là thứ mà {user} muốn {user_activity}?'
+  - text: '{user_object}? Nghe ghê vậy? Cần {user_activity} dữ không?'
+  - text: '{user_activity} {user_object} hơi khó với {user} hả?'
+  - text: '{user} cần {user_activity} {user_object} gấp không?'
+  utter_motivate_activity_object:
+  - text: Nếu {user} đủ tự tin thì MentalBot tin là bạn có thể {user_activity} {user_object} được
+  - text: Cứ tự tin, việc {user_activity} {user_object} sẽ thành công
+  - text: Oh, Theo tui thì {user} có thể {user_activity} {user_object} được.
+  - text: '{user} chắc chắn làm được. {user_activity} là chuyện nhỏ nếu như {user} {user_object} tin vào bản thân mình'
+  - text: Với sức mạnh của tình bạn, tui tin {user} sẽ {user_activity} {user_object} được
+  - text: '{user} {user_activity} được. Tin tui đi. Tui là thần tiên tri'
+  - text: '{user} cứ yên tâm. {user_activity} {user_object} là chuyện nhỏ đối với {user} mà đúng không? Tui không rành về mấy mảng này lắm :p'
+  - text: Theo tui dự đoán thì {user} sẽ {user_activity} {user_object} thành công
+  - text: '{user} làm được mà. Bằng sức mạnh của tình bạn và niềm tin, {user} sẽ {user_activity} {user_object} được.'
+  - text: '{user} {user_activity} {user_object} được mà.'
+  - text: '{user_activity} {user_object} là chuyện nhỏ đối với {user} mà đúng không?'
+  utter_ask_about_someone:
+  - text: '{user_someone} là ai? {user} cần phải {user_activity} {user_someone}?'
+  - text: '{user_someone} là ai mà {user} phải {user_activity}?'
+  - text: '{user} muốn {user_activity} {user_someone}?'
+  - text: '{user} cần {user_activity {user_someone} tới mức nào?'
+  - text: '{user} muốn {user_activity} ra sao với {user_someone}?'
+  utter_motivate_activity_object_someone:
+  - text: Nếu {user} đủ tự tin thì MentalBot tin là bạn có thể {user_activity} {user_someone} được
+  - text: Cứ tự tin, việc {user_activity} {user_someone} sẽ thành công
+  - text: Oh, Theo tui thì {user} có thể {user_activity} {user_someone} được.
+  - text: '{user} chắc chắn làm được. {user_activity} là chuyện nhỏ nếu như {user} {user_someone} tin vào bản thân mình'
+  - text: Với sức mạnh của tình bạn, tui tin {user} sẽ {user_activity} {user_someone} được
+  - text: '{user} {user_activity} được. Tin tui đi. Tui là thần tiên tri'
+  - text: '{user} cứ yên tâm. {user_activity} {user_someone} là chuyện nhỏ đối với {user} mà đúng không? Tui không rành về mấy mảng này lắm :p'
+  - text: Theo tui dự đoán thì {user} sẽ {user_activity} {user_someone} thành công
+  - text: '{user} làm được mà. Bằng sức mạnh của tình bạn và niềm tin, {user} sẽ {user_activity} {user_someone} được.'
+  - text: '{user} {user_activity} {user_someone} được mà.'
+  - text: '{user_activity} {user_someone} là chuyện nhỏ đối với {user} mà đúng không?'
 actions:
-- action_send_picture
-- action_set_reminder
-- action_remind
-- action_cancel_reminder
-- action_initial_greeting
-- action_show_user_info
-- action_note_mood
 - action_ask_for_timer
+- action_cancel_reminder
+- action_clear_loop
 - action_follow_up_mood
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- action_initial_greeting
+- action_note_issue
+- action_note_mood
+- action_remind
+- action_send_picture
+- action_set_loop_for_consultinng_anxiety
+- action_set_reminder
+- action_show_user_info
+- utter_affirm
+- utter_ask_about_object
+- utter_ask_about_someone
+- utter_ask_for_mood
+- utter_ask_if_bot_can_continue
+- utter_comment_on_help_with_ways_to_reduce_anxiety
+- utter_goodbye
+- utter_happy
+- utter_help_with_ways_to_reduce_anxiety
+- utter_motivate_activity
+- utter_motivate_activity_object
+- utter_motivate_activity_object_someone
+- utter_ready_to_help
+- action_note_feedback

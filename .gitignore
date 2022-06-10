@@ -3,3 +3,8 @@ venv
 models/*
 # except for .gitkeep, so that the folder itself is included
 !models/.gitkeep
+.rasa
+.vscode
+z_pythontest
+.env
+desktop.ini

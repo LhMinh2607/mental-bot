@@ -1,10 +1,11 @@
-version: "3.0"
+version: "2.0"
 
 stories:
 
 - story: happy path
   steps:
-  - intent: mood_great
+  - intent: provide_happy_mood
+  - action: action_note_mood
   - action: utter_happy
 
 
@@ -14,14 +15,18 @@ stories:
   - action: utter_iamabot
   - action: utter_remind_therapy
   - intent: affirm
+  # - slot_was_set:
+  #   - loop: None
+  - action: utter_affirm
   - action: utter_happy
 
 - story: bot rule
   steps:
   - intent: bot_rule
   - action: utter_botrule
-  - intent: affirm
-  - action: utter_botrule
+  # - intent: affirm
+  # - action: utter_affirm
+  # - action: utter_botrule
 
 - story: bot rule 2
   steps:
@@ -30,21 +35,94 @@ stories:
   - intent: deny
   - action: utter_botrule
 
-- story: sad path 1
-  steps:
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+# - story: sad path 1
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_unhappy_mood
+#   - action: action_note_mood
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
 
-- story: sad path 2
+# - story: sad path 2
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_unhappy_mood
+#   - action: action_note_mood
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_sorry
+
+# - story: open issue
+#   steps:
+#   - intent: provide_unhappy_mood
+#   - action: action_note_mood
+#   - action: utter_ask_for_issue
+
+# - story: sad path 1 sad issue
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_dead_relative_issue
+#   - action: action_note_issue
+#   # - action: utter_ask_for_more_issue
+#   # - intent: provide_dead_relative_issue
+#   # - action: action_note_issue
+#   - action: utter_address_dead_relative_issue
+
+# - story: sad path 1 abusing issue
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_abusing_issue
+#   - action: action_note_issue
+#   - action: utter_address_abusing_issue
+
+# - story: sad path 1 pressure_from_work issue
+#   steps:
+#   - intent: provide_pressure_from_work_issue
+#   - action: action_note_issue
+#   - action: utter_address_pressure_from_work_issue
+
+# - story: sad path 2
+#   steps:
+#   # - intent: mood_unhappy
+#   - intent: provide_unhappy_mood
+#   - action: action_note_mood
+#   - action: utter_ask_for_issue
+#   - intent: provide_issue
+#   - action: action_note_issue
+#   - action: utter_ask_for_more_issue
+#   - intent: deny
+#   - action: action_show_user_info
+
+- story: issue path
   steps:
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_sorry
+  - intent: provide_issue
+  - action: action_note_issue
+  - action: utter_ready_to_help
+
+- story: sad path 
+  steps:
+  # - intent: mood_unhappy
+  - intent: provide_unhappy_mood
+  - action: action_note_mood
+  - action: utter_ask_for_issue
+  - intent: provide_issue
+  - action: action_note_issue
+
+
+- story: sad path 3
+  steps:
+  # - intent: mood_unhappy
+  - intent: provide_unhappy_mood
+  - action: action_note_mood
+  - action: utter_ask_for_issue
+  - intent: cant_provide_issue
+  - action: utter_insist_on
+  - intent: cant_provide_issue
+  - action: utter_understand
+
 
 - story: depressed path 1
   steps:
@@ -62,7 +140,7 @@ stories:
   - action: action_note_mood
   - action: utter_did_that_help
   - intent: affirm
-  - action: utter_happy
+  - action: utter_affirm
 
 - story: send picture 1
   steps:
@@ -103,12 +181,214 @@ stories:
   - intent: request_personal_info
   - action: action_show_user_info
 
-- story: ask for mood
-  steps:
-  - intent: provide_mood
-  - action: action_note_mood
+# - story: ask for mood
+#   steps:
+#   - intent: provide_unhappy_mood
+#   - action: action_note_mood
 
-- story: ask for mood 2
+# - story: ask for mood 2
+#   steps:
+#   - intent: provide_happy_mood
+#   - action: action_note_mood
+
+- story: whereabout happy
   steps:
-  - intent: provide_mood
-  - action: action_note_mood
+  - intent: inform_about_past_whereabout_happypath
+  - action: utter_address_past_whereabout_happyPath
+
+- story: whereabout sad
+  steps:
+  - intent: inform_about_past_whereabout_sadpath
+  - action: utter_address_past_whereabout_sadPath
+
+- story: whereabout tired
+  steps:
+  - intent: inform_about_past_whereabout_tiredpath
+  - action: utter_address_past_whereabout_tiredPath
+
+##loop
+- story: ask for help with anxiety (generic) 1
+  steps:
+  - intent: ask_for_help_in_reducing_anxiety
+  - action: utter_help_with_ways_to_reduce_anxiety
+  - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  - action: utter_ask_if_bot_can_continue
+  # - action: action_set_loop_for_consultinng_anxiety
+  # - checkpoint: action_consult_with_generic_anxiety
+  - intent: affirm
+  - action: utter_help_with_ways_to_reduce_anxiety
+  - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  - action: utter_ask_if_bot_can_continue
+  - intent: deny
+  - action: utter_affirm
+  - action: utter_ready_to_help
+
+
+# - story: ask for help with anxiety (generic) 2
+#   steps:
+#   - checkpoint: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+#   - intent: affirm
+#   - action: utter_help_with_ways_to_reduce_anxiety
+#   # - checkpoint: action_consult_with_generic_anxiety
+
+# - story: ask for help with anxiety (generic) 2
+#   steps:
+#   - action: utter_ask_if_bot_can_continue
+#   - intent: affirm
+#   - action: utter_help_with_ways_to_reduce_anxiety
+#   - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+#   - action: utter_ask_if_bot_can_continue
+#   # - checkpoint: action_consult_with_generic_anxiety
+
+# - story: ask for help with anxiety (generic) 3
+#   steps:
+#   - intent: ask_for_help_in_reducing_anxiety
+#   - action: utter_help_with_ways_to_reduce_anxiety
+#   - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+#   - action: utter_ask_if_bot_can_continue
+#   - intent: deny
+#   # - action: action_clear_loop
+#   - action: utter_affirm
+#   - action: utter_ready_to_help
+  
+
+# - story: ask for help with anxiety (generic) 4
+#   steps:
+#   # - checkpoint: utter_ask_if_bot_can_continue
+#   - checkpoint: action_consult_with_generic_anxiety
+#   - intent: affirm
+#   # - action: utter_help_with_ways_to_reduce_anxiety
+#   # - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+#   # - action: utter_ask_if_bot_can_continue
+#   - action: action_consult_with_generic_anxiety
+#   - intent: deny
+#   - action: utter_affirm
+# - story: interactive_story_1
+  # steps:
+  # - intent: show_id
+  #   entities:
+  #   - userId: 6258e2b0ee1e676f8626d4bd
+  # - slot_was_set:
+  #   - userId: 6258e2b0ee1e676f8626d4bd
+  # # - slot_was_set:
+  # #   - loop: 6258e2b0ee1e676f8626d4bd
+  # - action: action_initial_greeting
+  # - slot_was_set:
+  #   - user: LhMinh2607
+  # - slot_was_set:
+  #   - userId: 6258e2b0ee1e676f8626d4bd
+  # - action: action_follow_up_mood
+  # - action: utter_ask_for_mood
+  # - intent: provide_happy_mood
+  #   entities:
+  #   - user_mood: ổn
+  # - slot_was_set:
+  #   - user_mood: ổn
+  # # - slot_was_set:
+  # #   - loop: ổn
+  # - action: action_note_mood
+  # - action: utter_happy
+  # - intent: ask_for_help_in_reducing_anxiety
+  #   entities:
+  #   - user_mood: stress
+  # - slot_was_set:
+  #   - user_mood: stress
+  # # - slot_was_set:
+  # #   - loop: có cách nào giảm stress hiệu quả không?
+  # - action: utter_help_with_ways_to_reduce_anxiety
+  # - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  # - action: utter_ask_if_bot_can_continue
+  # - intent: affirm
+  # # - slot_was_set:
+  # #   - loop: ok
+  # - action: utter_help_with_ways_to_reduce_anxiety
+  # - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  # - action: utter_ask_if_bot_can_continue
+  # - intent: deny
+  # # - slot_was_set:
+  # #   - loop: khỏi
+  # # - action: action_clear_loop
+  # # - slot_was_set:
+  # #   - loop: null
+  # - action: utter_affirm
+  # - action: utter_ready_to_help
+  # - intent: goodbye
+  # # - slot_was_set:
+  # #   - loop: bye
+  # - action: utter_goodbye
+  # - intent: affirm
+  # # - slot_was_set:
+  # #   - loop: ok
+  # - action: utter_affirm
+
+##generic responses for how to something something generic something that has nothing to do with mental health problems
+- story: ask how to
+  steps:
+  - intent: ask_how_to
+  - action: utter_motivate_activity
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask how to get
+  steps:
+  - intent: ask_how_to_get
+  - action: utter_ask_about_object
+  - action: utter_motivate_activity_object
+
+- story: ask how to with someone
+  steps:
+  - intent: ask_how_to_with_someone
+  - action: utter_ask_about_someone
+  - action: utter_motivate_activity_object_someone
+- story: interactive_story_1
+  steps:
+  - intent: ask_how_to
+    entities:
+    - user_activity: chạy nhanh hơn
+  - slot_was_set:
+    - user_activity: chạy nhanh hơn
+  - action: utter_motivate_activity
+  - intent: ask_how_to_get
+    entities:
+    - user_activity: có được
+    - user_object: điểm 10 môn văn
+  - slot_was_set:
+    - user_activity: có được
+  - slot_was_set:
+    - user_object: điểm 10 môn văn
+  - action: utter_ask_about_object
+  - action: utter_motivate_activity_object
+  - intent: ask_how_to_with_someone
+    entities:
+    - user_activity: đòi nợ
+    - user_someone: bạn thân
+  - slot_was_set:
+    - user_activity: đòi nợ
+  - slot_was_set:
+    - user_someone: bạn thân
+  - action: utter_ask_about_someone
+  - action: utter_motivate_activity_object_someone
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_for_help_in_reducing_anxiety
+    entities:
+    - user_mood: stress
+  - slot_was_set:
+    - user_mood: stress
+  - action: utter_help_with_ways_to_reduce_anxiety
+  - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  - action: utter_ask_if_bot_can_continue
+  - intent: affirm
+  - action: utter_help_with_ways_to_reduce_anxiety
+  - action: utter_comment_on_help_with_ways_to_reduce_anxiety
+  - action: utter_ask_if_bot_can_continue
+  - intent: deny
+  - action: utter_affirm
+
+
+- story: feedback
+  steps:
+  - intent: feedback
+  - action: action_note_feedback
