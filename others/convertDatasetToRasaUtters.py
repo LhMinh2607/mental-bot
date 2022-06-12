@@ -64,8 +64,8 @@ length = len(topicNames)
 # df = pd.read_csv('z_pythontest/counsel_chat.csv')
 print("df")
 
-# f = open("datasetUtters.yml", 'w', encoding="utf-8")
-f = open("dataset.yml", 'w', encoding="utf-8")
+f = open("others/datasetUtters.yml", 'w', encoding="utf-8")
+# f = open("others/dataset.yml", 'w', encoding="utf-8")
 
 # f = open("z_pythontest/dataset2/counselchat_vi_depression_0.csv", 'r')
 
@@ -86,39 +86,32 @@ def csvToRasaYaml(topicName, range1, range2):
         for i in range(range1, range2):
             print(topicName)
             # print('z_pythontest/dataset/counselchat_vi_'+topicName+'_'+str(i)+'.csv')
-            df = pd.read_csv('z_pythontest/dataset2/counselchat_vi_'+topicName+'_'+str(i)+'.csv', encoding="utf-8")
-            f.write("  utter_"+str(topicName)+"_"+str(i)+":\n")
-            for i, j in df.iterrows():
-                try:
-                    # answerTexts.append(str(j['answerText']))
-                    # questionTitle.append(str(j['questionTitle']))
-                    # questionText.append(str(j['questionText']))
-                    # upvotes.append(str(j['upvotes']))
-                    # topics.append(str(j['topic']))
-                    # views.append(str(j['views']))
-                    # questionID.append(str(int(j['questionID'])))
-                    # currentQuestionID=str(int(j['questionID']))
-                    # currentTopic=str(j['topic'])
-                    f.write("  - text: |-"+"\n")
-                    answer = str(j['answerText']).replace("\t", " ").replace("\n", " ").replace("\r", " ").replace("\'", "").replace("\"", "")
-                    answer = str(j['answerText']).split(". ")
-                    for an in answer:
-                        if(an):
-                            ' '.join(an.split())
-                            f.write("      "+' '.join(an.split())+"\n")
-                    # f.write(str(j['answerText']))
-                    # print("some shit")
-                    f.write("\n")
-                    # f.write("  - text:")
-                    # answer = str(j['answerText']).replace(". ", "\\n")
-                    # f.write("  '"+answer+"'\n")
-                    # f.write("\n")
-                    # print("some shit")
-                except Exception as e:
-                    print(e)
-                    pass
-            # data = pd.DataFrame({topicCol: topics, questionIdCol: questionID, questionTitleCol:questionTitle, questionTextCol: questionText, answerCol: answerTexts, upvoteCol: upvotes, viewCol: views})
-            # data.to_excel('counselchat_vi_'+currentTopic+"_"+currentQuestionID+'.xlsx', sheet_name='sheet1', index=False)
+            try:
+                df = pd.read_csv('z_pythontest/dataset2/counselchat_vi_'+topicName+'_'+str(i)+'.csv', encoding="utf-8")
+                # #for utters in domain.yml
+                # f.write("  utter_"+str(topicName)+"_"+str(i)+":\n")
+
+                #for utters in action in domain.yml
+                f.write("- utter_"+str(topicName)+"_"+str(i)+"\n")
+                for i, j in df.iterrows():
+                    try:
+                        # #for utters in domain.yml
+                        # f.write("  - text: |-"+"\n")
+                        # answer = str(j['answerText']).replace("\t", " ").replace("\n", " ").replace("\r", " ").replace("\'", "").replace("\"", "")
+                        # answer = str(j['answerText']).split(". ")
+                        # for an in answer:
+                        #     if(an):
+                        #         ' '.join(an.split())
+                        #         f.write("      "+' '.join(an.split())+"\n")
+                        # f.write(str(j['answerText']))
+                        print("some shit")
+                        # f.write("\n")
+                    except Exception as e:
+                        print(e)
+                        continue
+            except Exception as e:
+                print(e)
+                continue
     except Exception as e:
         print(e)
         pass
