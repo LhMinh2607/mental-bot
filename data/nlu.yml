@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 nlu:
 - intent: greet
   examples: |
@@ -432,205 +432,387 @@ nlu:
     - Cho đóng góp ý kiến đi
     - Muốn đóng góp ý kiến
     - Xin góp ý
-- intent: depression_0
+
+#bellow the first line under examples is my manually inserted nlu dataset (based on the first line -  from the dataset)
+#since the dataset only provides 1 example for each question, I had to manually insert more
+- intent: depression_0 
   examples: |
     - Tôi có thể thay đổi cảm giác của mình là vô giá trị với mọi người không?
 
+    - Tôi cảm thấy vô dụng
+    - Tôi cảm giấc tôi không có giá trị với bất kỳ ai
+    - Tôi là 1 người vô giá trị vô dụng
 - intent: depression_1
   examples: |
     - Tôi có quá nhiều vấn đề để tư vấn không?
+
+    - Tôi sợ là tôi có hơi nhiều vấn đề để tư vấn
+    - Tôi e là vấn đề của tôi quá nhiều để tư vấn
+    - Tôi có nhiều vấn đề lắm. Tư vấn được không?
 
 - intent: depression_2
   examples: |
     - Làm thế nào để tôi tìm ra nguyên nhân của chứng trầm cảm và lo lắng của tôi?
 
+    - Tôi không biết tạo sao tôi bị trầm cảm và lo lắng thái quá
+    - Có cách nào để tìm ra nguyên nhân gây trầm cảm và lo lắng cho tôi không?
+    - Tôi cần biết nguyên nhân gây ra trầm cảm và lo lắng cho tôi
+
 - intent: depression_3
   examples: |
     - Làm thế nào để tôi vượt qua sự lo lắng và trầm cảm của tôi?
 
+    - Tôi muốn hết trầm cảm và lo âu.
+    - Có cách nào để hết trầm cảm và lo âu không?
+
 - intent: depression_4
   examples: |
-    - Tại sao tôi lại khó chịu hoặc xuống mỗi ngày ngay cả khi không có gì xảy ra?
+    - Tại sao tôi lại khó chịu hoặc buồn mỗi ngày ngay cả khi không có gì xảy ra?
+
+    - Ngày nào tôi cũng cảm thấy khó chịu hoặc buồn kể cả khi không có gì xảy ra
+    - Tôi luôn thấy buồn mỗi ngày
+    - Tôi luôn thấy khó chịu mỗi ngày
 
 - intent: depression_5
   examples: |
     - Làm thế nào tôi có thể đối phó với trầm cảm xuất phát từ cơn đau mãn tính?
 
+    - Làm sao để đối phó với bệnh trầm cảm xuất phát từ cơn đau mãn tính?
+    - Làm sao để đối phó với trầm cảm từ cơn đau mãn tính?
+    
+
 - intent: depression_6
   examples: |
     - Làm thế nào tôi có thể được tư vấn nếu bác sĩ chăm sóc chính của tôi không giúp được gì?
 
+    - Bác sĩ chăm sóc chính của tôi không giúp được gì thì làm sao để tôi được tư vấn được?
+    - Bác sĩ chắm sóc chính của tôi còn không giúp được gì thì làm sao tôi tư vấn được?
+
 - intent: depression_7
   examples: |
     - Tại sao tôi gặp khó khăn trong việc duy trì sự cương cứng?
+    
 
 - intent: depression_8
   examples: |
-    - Làm thế nào để các triệu chứng trầm cảm và PMS đóng góp cho nhau và tôi có thể làm gì về nó?
+    - Các triệu chứng trầm cảm và PMS (Premenstrual syndrome) - Hội chứng tiền kinh nguyệt ảnh hưởng gì cho nhau và tôi có thể làm gì về nó?
+
+    - Trầm cảm và hội chứng tiền kinh nguyệt có ảnh hưởng gì cho nhau và tôi có thể làm gì?
+    - Hội chứng tiền kinh nguyệt và trầm cảm có ảnh hưởng xấu với tôi như thế nào?
+    
 
 - intent: depression_9
   examples: |
     - Tại sao nó cảm thấy như thể tự làm hại bản thân là một cơn nghiện?
 
+    - Tại sao tôi lại thích làm tổn hại bản thân?
+    - Tại sao tôi bị nghiện làm tổn hại bản thân?
+    - Tôi bị nghiện làm tổn hại bản thân?
+
 - intent: depression_10
   examples: |
-    - Người quản lý căn hộ của tôi sẽ không cho phép tôi giữ một con chó hỗ trợ tình cảm
+    - Người quản lý căn hộ của tôi sẽ không cho phép tôi nuôi một con chó hỗ trợ tình cảm
+    
+    - Tôi không được nuôi chó hỗ trợ tâm lý trong căn hộ tôi đang ở
+    - Chủ quản lý căn hộ tôi đang ở không cho tôi nuôi chó hỗ trợ tâm lý
 
 - intent: depression_11
   examples: |
     - Làm thế nào tôi có thể khiến chồng tôi lắng nghe nhu cầu của tôi và nói chuyện với tôi?
 
+    - Làm sao để chồng tôi chịu lắng nghe nhu cầu của tôi?
+    - Làm sao để chồng tôi chịu nói chuyện và lắng nghe tôi?
+    - Làm thế nào để chồng tôi lắng nghe nhu cầu của tôi?
+
 - intent: depression_12
   examples: |
-    - Tại sao tôi lại thèm trầm cảm?
+    - Tại sao tôi lại muốn bị trầm cảm?
+    
+    - Tại sao tôi lại thấy muốn trầm cảm?
+    - Sao tôi lại muốn thấy trầm cảm?
+    - Sao tôi lại muốn bị trầm cảm?
 
 - intent: depression_13
   examples: |
-    - Làm thế nào tôi có thể chiến đấu tốt nhất với mùa đông blues?
+    - Làm thế nào tôi có thể chiến đấu tốt nhất với mùa đông xanh (thấy buồn và tâm trạng xấu hơn mọi khi)?
+
+    - Làm sao để đối phó với tình trạng thấy buồn và tâm trạng xấu hơn mọi khi?
+    - Làm sao khi thấy buồn và tâm trạng xấu hơn mọi khi?
 
 - intent: depression_14
   examples: |
     - Làm thế nào để tôi trở lại trên đôi chân của mình trong khi trải qua một cuộc ly hôn tồi tệ?
 
+    - Làm sao để vục dậy khi vừa trải qua 1 cuộc ly hôn tồi tệ
+    - Làm sao để thoát khỏi tâm trạng khi vừa trải qua 1 cuộc ly hôn tồi tệ?
+    - Làm sao để đỡ buồn hơn khi vừa trải qua 1 cuộc ly hôn tồi tệ?
+
 - intent: depression_15
   examples: |
     - Làm thế nào tôi có thể tìm lại chính mình?
 
+    - Làm sao để tìm lại chính mình?
+    - Làm sao để tìm lại bản thân?
+
 - intent: depression_17
   examples: |
-    - Có phải ước gì tôi không được sinh ra là một dấu hiệu của một cái gì đó sâu sắc hơn?
+    - Có phải ước gì tôi không được sinh ra là một dấu hiệu của một cái gì đó nghiêm trọng hơn?
+
+    - Tôi ước gì tôi chưa bao giờ được sinh ra. Đó có phải dấu hiệu của 1 cái gì đó nghiêm trọng không?
+    - Ước gì mình chưa bao giờ được sinh ra có phải dấu hiệu của cái gì đó nghiêm trọng không?
+    - Có dấu hiệu nghiêm trọng không khi tôi ước gì mình chưa được sinh ra?
 
 - intent: depression_18
   examples: |
     - Tôi thực sự không hài lòng với mọi thứ trong cuộc sống của mình nhưng tôi biết tôi không có lý do gì để cảm thấy như vậy
 
+    - Tôi không có lý do gì để thấy không hài lòng với mọi thứ trong cuộc sống của mình nhưng tôi lại cảm thấy như vậy
+    - Tôi thấy thất vọng về mọi thứ trong cuộc sống của mình nhưng tôi không có lý do gì để cảm thấy như vậy cả
+    - Tôi thấy không hài lòng với mọi thứ trong cuộc sống dù không có lý do gì để thấy vậy
+
+#nonspecific question title
 - intent: depression_19
   examples: |
     - Làm thế nào tôi có thể giúp bạn gái của tôi?
+
+    - Làm sao để tôi có thể giúp đỡ bạn gái của tôi?
+    - Sao để giúp bạn gái?
 
 - intent: depression_20
   examples: |
     - Có phải là bình thường khi đảm nhận vai trò cha mẹ và cảm thấy rất đau đớn và tan vỡ khi còn là một thiếu niên?
 
+    - Làm cha mẹ ở tuổi thiếu niên có bình thường không?
+    - Làm phụ mẫu ở tuổi thiếu niên có bình thường không?
+    - Có con ở tuổi thiếu niên có bất thường không?
+    - Làm cha mẹ khi còn quá trẻ có bình thường không?
+
 - intent: depression_21
   examples: |
     - Tại sao tôi cảm thấy mình không có gì hơn là một người vợ và mẹ?
+    
+    - Sao tôi lại thấy mình không có gì đặc biệt ngoài việc làm vợ và mẹ?
+    - Sao tôi lại thấy mình không có vai trò gì đặc biệt ngoài làm vợ và mẹ?
 
 - intent: depression_22
   examples: |
     - Có điều gì tôi có thể làm về trầm cảm và lo lắng của mình không?
 
+    - Tôi có thể làm gì với vấn đề trầm cảm và lo lắng của mình?
+    - Tôi có thể làm gì để đỡ trầm cảm và lo lắng hơn?
+
 - intent: depression_23
   examples: |
     - Tại sao tôi cảm thấy mình không thuộc về bất cứ nơi nào?
 
+    - Sao tôi lại thấy mình không thuộc về đâu hết?
+    - Tôi cảm thấy mình không hợp với chỗ nào hết
+
+#nonspecific question title
 - intent: depression_24
   examples: |
     - Bạn tôi có bị trầm cảm không?
+
+    - Trầm cảm có làm hại bạn tôi không?
+    - Bạn tôi có triệu chứng trầm cảm không?
 
 - intent: depression_26
   examples: |
     - Tôi hoàn toàn mất đi chính mình - Làm thế nào tôi có thể thấy mình một lần nữa?
 
+    - Tôi đã mất đi bản thân. Làm sao để tôi có thể lấy lại chính mình 1 lần nữa?
+    - Làm sao để thấy được chính mình 1 lần nữa khi tôi đã đánh mất bản thân?
+    
+#nonspecific question title
 - intent: depression_27
   examples: |
     - Tôi đã cảm thấy buồn
+    
+    - Tôi đã từng cảm thấy buồn
+    - Tôi đã thấy buồn
 
 - intent: depression_28
   examples: |
     - Làm thế nào để tôi nói về cảm giác trầm cảm của tôi, và tôi nói chuyện với ai?
 
+    - Làm sao để chia sẻ cảm giác trầm cảm? Và nói với ai?
+    - Làm sao để chia sẻ cảm giác trầm cảm với người khác? Và chia sẻ với ai?
+
+#duplicate
 - intent: depression_29
   examples: |
     - Làm thế nào tôi có thể ngừng cảm thấy trống rỗng?
+
+    - Làm sao để hết cảm thấy trống rỗng?
+    - Làm sao để hết chán?
+    - Làm sao để ngừng cảm thấy trống rỗng?
 
 - intent: depression_30
   examples: |
     - Tự chẩn đoán có ổn không?
 
+    - Tự chẩn đoán tâm lý có được không?
+    - Tôi có tự chẩn đoán tâm lý được không?
+    - Tự chuẩn đoán tâm lý có ổn không?
+
 - intent: depression_31
   examples: |
     - Làm thế nào để tôi kết bạn mới?
+
+    - Làm sao để kết bạn?
+    - Làm sao để kiếm bạn mới?
+    - Làm sao để kết bạn?
+    - Muốn kết bạn phải làm sao?
 
 - intent: depression_32
   examples: |
     - Gia đình tôi không thể chịu đựng được tôi
 
+    - Tôi không được chào đón tốt ở gia đình tôi 
+    - Gia đình tôi không chào đón tôi 
+    - Gia đình không chịu đựng được tôi 
+    - Gia đình tôi không chịu đựng được tôi
+    - Gia đình tôi không chứa chấp tôi 
+
 - intent: depression_33
   examples: |
     - Tôi có những cơn trầm cảm lâu dài, lo lắng và cần thay đổi liên tục tại sao?
+
+    - Tôi hay bị lên cơn trầm cảm lâu dài, lo âu và thay đổi liên tục. Tại sao?
+    - Sao tôi hay bị lên cơn trầm cảm lâu dài?
 
 - intent: depression_34
   examples: |
     - Tôi rất chán nản?
 
+    - Tôi hay bị chán nản
+    - Tôi rất hay bị chán nản 
+
+
 - intent: depression_35
   examples: |
     - Làm sao tôi biết nếu tôi bị trầm cảm?
+
+    - Làm sao để biết mình bị trầm cảm?
+    - Sao để biết khi nào thì mình bị trầm cảm?
+    - Triệu chứng của trầm cảm là gì?
+    - Dấu hiệu bị trầm cảm là gì?
 
 - intent: depression_36
   examples: |
     - Gia đình tôi nói tôi bị trầm cảm
 
+    - Tôi bị gia đình nói trầm cảm
+    - Tôi bị nói là trầm cảm bởi gia đình mình 
+
 - intent: depression_37
   examples: |
     - Tôi nghĩ rằng bạn tôi có thể bị trầm cảm
 
+    - Bạn tôi có thể bị trầm cảm theo suy luận của tôi
+    - Bạn tôi có thể bị trầm cảm nếu suy đoán của tôi đúng
+
 - intent: depression_38
   examples: |
-    - Có phải tâm trạng của tôi chỉ là một giai đoạn hay tôi cần giúp đỡ?
+    - Có phải tâm trạng của tôi chỉ là một giai đoạn tức thời hay tôi cần giúp đỡ?
+
+    - Tâm trạng của tôi chỉ là nhất thời hay tôi thực sự cần giúp đỡ?
+    - Tôi thực sự cần được giúp đỡ hay tâm trạng của tôi chỉ là nhất thời?
+
 
 - intent: depression_39
   examples: |
     - Làm thế nào để tôi biết nếu tôi bị trầm cảm?
 
+    - Làm sao để biết nếu tôi bị trầm cảm?
+
 - intent: depression_40
   examples: |
     - Làm thế nào để tôi giúp bạn trai 20 tuổi của tôi nói rằng anh ấy ghét cuộc sống của mình?
+
+    - Bạn trai 20 tuổi của tôi nói rằng ảnh ghét cuộc sống. Làm sao để giúp ảnh?
+    - Bạn trai tôi ghét cuộc sống của mình. Tôi phải giúp đỡ làm sao?
 
 - intent: depression_41
   examples: |
     - Tôi cảm thấy như mẹ tôi không ủng hộ tôi
 
+    - Mẹ tôi không ủng hộ tôi theo cảm giác của tôi 
+    - Mẹ tôi có thể không ủng hộ tôi theo suy đoán của tôi
+
 - intent: depression_42
   examples: |
     - Tại sao tôi cảm thấy buồn mọi lúc?
+
+    - Lúc nào tôi cũng thấy buồn?
+    - Tôi luôn thấy buồn mọi lúc
 
 - intent: depression_43
   examples: |
     - Có phải là bình thường để không cảm thấy đồng cảm?
 
+    - Không đồng cảm với người khác có bình thường không?
+    - Không thấy đồng cảm với người khác có bình thường không?
+
 - intent: depression_44
   examples: |
-    - Làm thế nào tôi có thể đối phó với trầm cảm của mình?
+    - Làm thế nào tôi có thể đối phó với bệnh trầm cảm của mình?
+
+    - Làm sao để đối phó với bệnh trầm cảm?
+    - Bị trầm cảm thì đối phó sao?
 
 - intent: depression_45
   examples: |
     - Tôi có thể học cách hạnh phúc một mình không?
 
+    - Tôi có thể hạnh phúc 1 mình không?
+    - Học cách hạnh phúc 1 mình như thế nào?
+
 - intent: depression_46
   examples: |
     - Làm thế nào để tôi làm cho mình hạnh phúc nếu không có người làm cho tôi hạnh phúc?
 
+    - Làm sao để hạnh phúc hơn khi không có ai khiến tôi hạnh phúc?
+    - Làm sao để hạnh phúc hơn dù không có ai ở bên để khiến tôi hạnh phúc?
+
+#nonspecific question title
 - intent: depression_47
   examples: |
     - Đây có phải là trầm cảm?
+
+    - Cái này có phải trầm cảm?
+    - Trầm cảm có phải là đây?
+
 
 - intent: depression_48
   examples: |
     - Làm thế nào tôi có thể khiến mọi người lắng nghe?
 
+    - Làm sao để được lắng nghe?
+    - Mọi người xung quanh tôi không lắng nghe tôi. Làm sao để họ chịu lắng nghe?
+    - Làm sao để lấy được sự chú ý của mọi người để họ lắng nghe tôi?
+
+#duplicate
 - intent: depression_49
   examples: |
     - Làm thế nào để tôi ngừng cảm thấy trống rỗng?
 
+    - Ngừng cảm thấy trống rỗng bằng cách nào?
+
+    
+
 - intent: depression_50
   examples: |
-    - Làm thế nào để tôi đối phó với các nhân vật của cha mẹ đã làm tổn thương tôi?
+    - Làm thế nào để tôi đối phó với các tính cách của cha mẹ đã làm tổn thương tôi?
+
+    - Tính cách cha mẹ đã làm tổn thương tôi
 
 - intent: depression_51
   examples: |
     - Bố mẹ tôi đang ly hôn và tôi cảm thấy chán nản
+    
+    - Ba mẹ tôi đang ly hôn và tôi cảm thấy nản
+    - Ba mẹ tôi đang trong quá trình ly hôn và tôi cảm thấy nản
 
 - intent: depression_52
   examples: |
@@ -640,325 +822,581 @@ nlu:
   examples: |
     - Tôi cảm thấy như sự tồn tại của tôi là vô nghĩa
 
+    - Sự tồn tại của tôi là vô nghĩa
+    - Tôi cảm thấy sự tồn tại của tôi không giúp ích được gì cho ai và nó vô nghĩa
+
 - intent: depression_54
   examples: |
     - Làm thế nào tôi có thể giúp chồng tôi sau một nỗ lực tự sát?
+
+    - Làm sao để giúp chồng tôi sau 1 lần anh ta có ý định tự tử?
+    - Chồng tôi đã từng có ý định và thực hiện tự tử. Làm sao để giúp anh ấy?
 
 - intent: depression_55
   examples: |
     - Tại sao tôi cảm thấy vô giá trị và mệt mỏi?
 
+    - Sao tôi lại thấy mệt mỏi và vô dụng?
+    - Tôi cảm thấy mệt mỏi và vô giá trị. Tại sao?
+
 - intent: depression_56
   examples: |
-    - Làm thế nào bạn có thể trở lại với bản thân cũ của tôi?
+    - Làm thế nào để có thể trở lại với bản thân cũ của tôi?
+
+    - Làm sao để quay lại với bạn thân cũ?
+    - Sao để tái hợp với bạn thân cũ của tôi?
+
 
 - intent: depression_57
   examples: |
     - Làm thế nào để tôi nói với bố mẹ rằng tôi bị trầm cảm và cần giúp đỡ?
 
+    - Tôi bị trầm và cần giúp đỡ. Làm sao để nói ba mẹ tôi điều đó?
+    - Làm sao để nói với ba mẹ là tôi bị trầm cảm và cần giúp đỡ?
+
 - intent: depression_58
   examples: |
     - Tôi có thể làm gì về chứng trầm cảm và lo lắng của mình sau khi thử rất nhiều thứ?
+
+    - Tôi có thể làm gì cho chứng trầm cảm và lo âu của mình sau khi đã thử mọi thứ có thể?
+    - Tôi đã thử mọi thứ nhưng không giúp được gì cho chứng trầm cảm và lo âu của mình
 
 - intent: depression_59
   examples: |
     - Tại sao tôi cảm thấy như mình sẽ không bao giờ có một nghề nghiệp/số tiền tốt cho bất cứ điều gì về tài chính?
 
+    - Tôi cảm thấy lo sợ mình sẽ không bao giờ có 1 nghề nghiệp hay số tiền ổn định cho mọi thứ liên quan tới tài chính trong tương lai?
+    - Tôi không rành về tài chính và sợ sẽ không có được 1 nghề nghiệp ổn định và lương đủ để lo các vấn đề tài chính
+
 - intent: depression_60
   examples: |
     - Chồng tôi muốn ly hôn sau khi tôi được chẩn đoán bị trầm cảm nặng
 
+    - Tôi bị chẩn đoán bị trầm cảm nặng và chồng tôi muốn ly hôn
+    - Chồng tôi muốn ly hôn tôi sau khi tôi bị trầm cảm nặng
+
 - intent: depression_61
   examples: |
-    - Tôi là một người lộn xộn về thể chất, tinh thần, cảm xúc và tinh thần
+    - Tôi là một người lộn xộn về thể chất, tinh thần và cảm xúc
+    
+    - Tôi là 1 người có nhiều vấn đề về thể chất, tinh thần, cảm xúc
+    - Tôi có nhiều vấn đề về thể chất, tinh thần và cảm xúc
 
 - intent: depression_62
   examples: |
     - Chồng tôi làm tôi khó chịu về tình dục
 
+    - Chồng tôi gây khó cho tôi về vấn đề tình dục
+    - Vấn đề tình dục khiến chồng tôi làm tôi khó chịu
+
 - intent: depression_63
   examples: |
     - Nếu tôi đang cố gắng ngừng tự làm hại mình và tôi tìm kiếm sự giúp đỡ, liệu tôi có cần phải được đưa vào môi trường nội trú không?
 
+    - Nếu tôi đang trong quá trình bỏ nghiện làm tổn hại bản thân mình thì tôi có cần phải được đưa vào 1 trung tâm hỗ trợ tâm lý nào không?
+    - Tôi có cần được đưa vào 1 trung tâm hỗ trợ nếu tôi đang cố bỏ tự làm hại bản thân mình không?
+
+#nonspecific question title
 - intent: depression_64
   examples: |
     - Tôi có lo lắng không?
+
+    - Tôi có hay lo âu không?
+    - Tôi có lo lắng lắm không?
 
 - intent: depression_65
   examples: |
     - Làm thế nào tôi có thể chăm sóc chứng trầm cảm của mình sau một cuộc chia tay?
 
+    - Sao để kiềm hãm chứng trầm cảm sau khi chia tay người yêu?
+    - Sao để kiềm chế cơn trầm cảm sau 1 cuộc thất tình?
+
 - intent: depression_66
   examples: |
     - Làm thế nào để tôi nói với bố mẹ rằng tôi nghĩ rằng tôi có một số vấn đề về tâm thần?
+
+    - Sao để nói với ba mẹ tôi rằng tôi nghĩ tôi có 1 số vấn đề tâm thần?
+    - Sao để nói với ba mẹ tôi về vấn đề tâm thần của tôi?
 
 - intent: depression_67
   examples: |
     - Làm thế nào tôi có thể ngừng suy nghĩ tiêu cực về bản thân?
 
+    - Sao để ngừng suy nghĩ tiêu cực về bản thân mình?
+    - Sao để hết suy nghĩ tiêu cực về bản thân?
+
+#nonspecific question title
 - intent: depression_68
   examples: |
     - Làm thế nào để tôi ngừng cảm thấy khủng khiếp như vậy?
 
+    - Sao để hết cảm thấy khủng khiếp như vậy?
+    - Sao để hết cảm giác khủng khiếp?
+
 - intent: depression_69
   examples: |
-    - Làm thế nào tôi có thể hạnh phúc như một người mẹ ở nhà?
+    - Làm thế nào tôi có thể hạnh phúc khi làm 1 người mẹ ở nhà?
+
+    - Là 1 bà mẹ nội trợ, làm sao để tôi thấy hạnh phúc?
+    - Làm sao để tôi cảm thấy hạnh phúc với tư cách là 1 người mẹ nội trợ?
 
 - intent: depression_70
   examples: |
     - Làm cách nào để cân bằng trường học và cuộc sống?
 
+    - Làm sao để cân bằng cuộc sống và trường học?
+    - Cân bằng cuộc sống và trường học bằng cách nào?
+
 - intent: depression_71
   examples: |
     - Làm thế nào để tôi vượt qua sự trầm cảm của tôi khỏi bị tách khỏi quân đội?
 
+    - Tôi bị đuổi ra khỏi quân ngũ? Làm sao để vượt qua sự trầm cảm này?
+    - Làm sao vượt qua sự trầm cảm khi bị tách ra khỏi quân đội?
+
+#duplicate
 - intent: depression_72
   examples: |
     - Làm thế nào để tôi vượt qua chứng trầm cảm của tôi?
+
+    - Làm sao để tôi vượt qua sự trầm cảm?
 
 - intent: depression_73
   examples: |
     - Tôi nên làm gì khi bố mẹ tôi sẽ không cho tôi gặp một nhà trị liệu?
 
+    - Tôi phải làm gì khi ba mẹ tôi không cho tôi gặp 1 nhà trị liệu tâm lý?
+    - Tôi phải làm gì khi ba mẹ tôi không muốn tôi gặp 1 nhà điều trị tâm lý?
+
+#duplicate
 - intent: depression_74
   examples: |
     - Làm thế nào tôi có thể chống lại sự thôi thúc để cắt?
+    
+    - Làm sao để chống lại sự thôi thúc để cắt?
+    - Làm sao để đối phó với việc muốn cắt?
 
+#duplicate
 - intent: depression_75
   examples: |
     - Làm thế nào tôi có thể chống lại sự thôi thúc để cắt?
 
+#duplicate
 - intent: depression_76
   examples: |
     - Tại sao tôi lại buồn như vậy?
+    
+    - Sao tôi lại thấy buồn?
+    - Điều gì khiến tôi buồn?
 
 - intent: depression_77
   examples: |
     - Tại sao tôi không thể cười nữa?
 
+    - Tại sao tôi không cười được nữa?
+    - Tôi không thể cười được nữa
+
+#duplicate
 - intent: depression_78
   examples: |
     - Có thể là tôi bị trầm cảm?
 
+    - Tôi có thể bị trầm cảm?
+
+#duplicate
 - intent: depression_79
   examples: |
     - Làm thế nào tôi có thể đối phó với trầm cảm?
 
+    - Đối phó với trầm cảm kiểu gì?
+
+#duplicate
 - intent: depression_80
   examples: |
     - Làm thế nào để tôi thoát khỏi trầm cảm?
+
+    - Thoát khỏi trầm cảm bằng cách nào?
 
 - intent: depression_81
   examples: |
     - Trầm cảm của tôi đang phá hoại việc tìm kiếm công việc của tôi?
 
+    - Chứng trầm cảm của tôi làm tôi không tìm được công việc
+    - Tôi không thể tìm việc được do chứng trầm cảm
+
+#duplicate
 - intent: depression_82
   examples: |
     - Làm thế nào tôi có thể trở lại để trở thành con người tôi thực sự?
 
+    - Làm sao để trở lại con người trước của tôi?
+
 - intent: depression_83
   examples: |
-    - Làm thế nào tôi có thể mang đến sự trầm cảm có thể của mình cho bố mẹ tôi?
+    - Làm thế nào tôi có chia sẻ, nói đến sự trầm cảm có thể có của mình cho bố mẹ tôi?
 
+    - Sao để nói với ba mẹ về sự trầm cảm có thể có của tôi?
+
+#duplicate
 - intent: depression_84
   examples: |
     - Tôi cảm thấy như cuộc sống của tôi là vô nghĩa
+
+    - Cuộc sống là vô nghĩa
+    - Đời là bể khổ
+
 
 - intent: depression_85
   examples: |
     - Làm thế nào tôi có thể quản lý sự lo lắng và trầm cảm của mình để tôi có thể cảm thấy bình thường trở lại?
 
+    - Kiềm chế, quản lý, kiểm soát sự lo lắng và trầm cảm của mình như thế nào để tôi có thể cảm thấy bình thường?
+    - Tôi không biết quản lý sự lo lắng và trầm cảm của mình ra sao để tôi có thể cảm thấy bình thường trở lại?
+
+#duplicate
 - intent: depression_86
   examples: |
     - Tôi có thể bị trầm cảm?
 
+    - Có thể tôi bị trầm cảm
+
+#duplicate
 - intent: depression_87
   examples: |
     - Làm thế nào tôi có thể quản lý sự lo lắng của mình?
+
+    - Quản lý sự lo lắng kiểu gì?
 
 - intent: depression_88
   examples: |
     - Tại sao tôi cảm thấy rất cô đơn khi tôi có bạn bè và sự chú ý?
 
+    - Tôi cảm thấy cô đơn khi tôi có bạn bè và sự chú ý
+    - Tôi cảm thấy cô đơn khi tôi được chú ý và có bạn bè
+
+#duplicate
 - intent: depression_89
   examples: |
     - Làm thế nào tôi có thể kiểm soát sự lo lắng của mình?
 
+    - Kiểm soát sự lo lắng của mình bằng cách nào?
+
+#nonspecific question title
 - intent: depression_90
   examples: |
     - Tôi 20 tuổi và khốn khổ
 
+    - Tôi 20 tuổi và cảm thấy khốn khổ
+    - Tôi thấy khốn khổ dù mới 20 tuổi
+
+#duplicate
 - intent: depression_91
   examples: |
-    - Tại sao tôi cảm thấy trống rỗng gần đây?
+    - Tại sao tôi cảm thấy trống rỗng dạo gần đây?
+
+    - Tôi cảm thấy trống rỗng mấy ngày gần đây
+    - Sao tôi lại thấy trống rỗng trong mấy ngày gần đây?
 
 - intent: depression_92
   examples: |
-    - Làm thế nào tôi có thể đối phó với rối loạn căng thẳng sau chấn thương của tôi?
+    - Làm thế nào tôi có thể đối phó với rối loạn căng thẳng sau chấn thương PTSD của tôi?
+    
+    - Làm sao để đối phó với chứng rối loạn căng thẳng sau chấn thương của tôi?
+    - Đối phó với chứng rối loạn căng thẳng sau chấn thương
 
 - intent: depression_93
   examples: |
     - Làm thế nào tôi có thể vượt qua rối loạn căng thẳng sau chấn thương mà không có bố mẹ biết về nó?
 
+    - Làm sao để vượt qua rối loạn căng thẳng sau chấn thương mà không cho ba mẹ biết?
+    - Tôi muốn vượt qua rối loạn căng thẳng sau chấn thường nhưng không muốn ba mẹ tôi biết
+
 - intent: depression_95
   examples: |
     - Làm thế nào tôi có thể vượt qua trầm cảm và đau buồn của mình?
 
+    - Làm sao để vượt qua chứng trầm cảm và đau buồn?
+    - Vượt qua chứng trầm cảm và đau buồn bằng cách nào?
+
+#nonspecific question title
 - intent: depression_96
   examples: |
     - Làm thế nào để tôi biết mình?
+
+    - Làm sao để tôi biết bản thân mình?
 
 - intent: depression_97
   examples: |
     - Làm thế nào để tôi trở lại với niềm vui của tôi, hạnh phúc một lần nữa?
 
+    - Làm sao để tôi trở lại với niềm vui như cũ của tôi, hạnh phúc thêm 1 lần nữa?
+    - Làm sao để tôi quay lại với niềm vui của tôi?
+
 - intent: depression_98
   examples: |
     - Làm thế nào tôi có thể yêu bản thân mình?
 
+    - Làm sao để tôi yêu bản thân mình hơn?
+    - Tôi muốn biết cách để yêu quý bản thân mình
+
+#nonspecific question title
 - intent: depression_99
   examples: |
     - Tôi cảm thấy tội lỗi vì tôi không nói không với những tiến bộ của một chàng trai
+
+    - Tôi cảm thấy có lỗi vì tôi không nói không với tiến bộ của 1 anh chàng
+    - Tôi cảm thấy có lỗi khi không nói không với tiến bộ của 1 chàng trai
 
 - intent: depression_100
   examples: |
     - Làm thế nào để tôi đối phó với những suy nghĩ xấu?
 
+    - Đối phó với suy nghĩ xấu kiểu gì?
+    - Làm sao để đối phó với những suy nghĩ tiêu cực?
+
 - intent: depression_101
   examples: |
     - Làm thế nào tôi có thể cảm thấy trống rỗng mặc dù tôi chỉ ở tuổi thiếu niên?
 
+    - Tôi bị sao mà cảm thấy trống rỗng dù tôi chỉ đang ở tuổi thiếu niên?
+    - Tôi cảm thấy trống rỗng dù tôi chỉ đang ở tuổi thiếu niên
+
+#duplicate
 - intent: depression_102
   examples: |
     - Làm thế nào để tôi biết nếu tôi bị trầm cảm?
 
+    - Làm sao tôi biết triệu chứng trầm cảm là gì?
+    - Sao tôi biết tôi có bị trầm cảm hay không?
+
 - intent: depression_103
   examples: |
-    - Tôi nghĩ rằng tôi bị lo lắng và trầm cảm.Nó đã thể hiện sự mất lòng tin cực độ đối với người khác
+    - Tôi nghĩ rằng tôi bị lo lắng và trầm cảm. Nó đã thể hiện sự mất lòng tin cực độ đối với người khác
+
+    - Tôi nghĩ là tôi bị lo âu và trầm cảm vì nó mà tôi đã mất lòng tin cực độ với người khác
+    - Tôi đã mất lòng tin cực độ với người khác vì chứng lo âu và trầm cảm tôi nghĩ tôi có thể bị
 
 - intent: depression_104
   examples: |
     - Tôi có tiếng nói trong đầu
 
+    - Có giọng nói trong đầu của tôi
+    - Trong đầu tôi có giọng nói nói chuyện với tôi
+
 - intent: depression_105
   examples: |
     - Tôi chán nản và không thể kết nối với mọi người sau khi chia tay
+
+    - Sau khi chia tay, tôi không muốn kết nối với ai khác cả
+    - Tôi thấy nản và không thể kết nối với mọi người sau khi chia tay người yêu
 
 - intent: depression_106
   examples: |
     - Tôi tức giận đến nỗi tôi muốn nổ tung
 
+    - Tôi hay giận tới mức tôi muốn nổ tung
+    - Tôi hay tức tới nỗi tôi muốn nổ tung
+
 - intent: depression_107
   examples: |
     - Tôi cần giúp đỡ với chứng sợ bị chứng sợ hãi nghiêm trọng, xe máy và lo lắng
+
+    - Tôi cần giúp đỡ với chứng sợ hãi nghiêm trọng và lo lắng thái quá
+    - Tôi cần giúp đỡ với chứng sợ hãi và lo âu
 
 - intent: depression_108
   examples: |
     - Tôi có thể làm gì nếu tôi cần nói chuyện với ai đó nhưng tôi không có tiền?
 
+    - Tôi phải làm gì khi tôi cần nói chuyện với ai đó mà tôi không có tiền?
+    - Tôi không có tiền nhưng tôi cần nói chuyện với ai ĐO
+
 - intent: depression_110
   examples: |
     - Làm thế nào để tôi học cách cảm nhận cảm xúc?
+    
+    - Học cách cảm nhận cảm xúc sao?
+    - Sao để học cách cảm nhận cảm xúc?
 
 - intent: depression_111
   examples: |
     - Làm thế nào tôi có thể giúp con gái tôi bị trầm cảm nghiêm trọng và hình thức suy nghĩ ám ảnh của cô ấy?
 
+    - Sao để tôi có thể giúp con gái bị trầm cảm nghiêm trọng của tôi?
+    - Con gái tôi bị trầm cảm nghiêm trọng. Làm sao để tôi giúp nó?
+
+
 - intent: depression_112
   examples: |
     - Tôi chán nản vì mẹ tôi đã đuổi tôi ra sau khi sinh con
+
+    - Tôi thấy nản khi mẹ tôi đuổi tôi ra sau khi sinh con
+    - Sau khi tôi sinh con, mẹ tôi đuổi tôi ra khỏi nhà
 
 - intent: depression_113
   examples: |
     - Tôi có nên quay lại dùng thuốc không?
 
+    - Tôi có nên dùng thuốc không?
+    - Tôi có cần quay lại dùng thuốc không?
+
 - intent: depression_114
   examples: |
     - Làm thế nào tôi có thể hạnh phúc một lần nữa?
 
+    - Làm sao để hạnh phúc 1 lần nữa?
+    - Để hạnh phúc 1 lần nữa, tôi cần phải làm gì?
+
+#duplicate
 - intent: depression_115
   examples: |
     - Tôi luôn cảm thấy chán nản
+    
+    - Tôi luôn luôn thấy chán nản mọi nơi
 
+#nonspecific question title
 - intent: depression_116
   examples: |
     - Chồng sắp cưới của tôi có cần một con chó dịch vụ không?
+
+    - Chồng sắp cưới của tôi có cần 1 con chó dịch vụ không?
+    
 
 - intent: depression_117
   examples: |
     - Tôi choáng ngợp và chán nản
 
+    - Tôi thấy choáng ngợp và chán nản
+    - Tôi thấy ngợp
+
 - intent: depression_118
   examples: |
     - Tôi đang đi du học, và tôi đang chán nản
+
+    - Tôi thấy nản và tôi đang đi du học
+    - Tôi đang đi du học nhưng tôi thấy chán nản
 
 - intent: depression_119
   examples: |
     - Mối quan hệ khiến tôi lo lắng và buồn nôn
 
+    - Mối quan hệ khiến tôi lo âu và buồn nôn
+    - Mối quan hệ xã hội khiến tôi lo âu
+
 - intent: depression_120
   examples: |
-    - Bạn trai cũ của tôi là với một người mới, và nó đau
+    - Bạn trai cũ của tôi cặp kè với một người mới, và nó khiến tôi đau
+
+    - Bạn trai cũ của tôi đã có 1 người mới và nó khiến tôi đau
+    - Bạn trai cũ của tôi có 1 người mới và nó khiến tôi đau đớn
+
+
 
 - intent: depression_121
   examples: |
     - Tôi sợ đến gặp bác sĩ hoặc dùng thuốc chống trầm cảm
+    
+    - Tôi sợ gặp bác sĩ và dùng thuốc phòng chống trầm cảm
+    - Tôi sợ dùng thuốc phòng trầm cảm
 
+#nonspecific question title
 - intent: depression_122
   examples: |
     - Tôi có thể làm gì khi tôi có thể đứng ở một mình?
+
+    
 
 - intent: depression_125
   examples: |
     - Làm thế nào để tôi chiến đấu với sự cô đơn bên trong từ trầm cảm và rối loạn lo âu nghiêm trọng?
 
+    - Cách chiến đấu với sự cô đơn bên trong từ trầm cảm và rối loạn lo âu nghiêm trọng 
+    - Có cách nào để đối phó với sự cô đơn từ trầm cảm và rối loạn lo âu nghiêm trọng không?
+
 - intent: depression_126
   examples: |
     - Tôi chán nản vì vợ tôi đã ly dị tôi và tôi đã không gặp con tôi trong một thời gian
 
+    - Vợ tôi đã ly dị tôi và đã lâu tôi không gặp con tôi
+    - Lâu rồi tôi chưa được gặp con tôi sau khi tôi và vợ tôi ly hôn
+
+#nonspecific question title
 - intent: depression_127
   examples: |
     - Làm thế nào một người như tôi có thể hạnh phúc?
+
+    - Làm sao để một người như tôi trở nên hạnh phúc
+    - 1 người như tôi làm sao để trở nên hạnh phúc?
+
 
 - intent: depression_128
   examples: |
     - Tôi không tin vào bản thân mình nữa
 
+    - Tôi không thể tin tưởng vào bản thân mình được nữa
+    - Không thể tin vào bản thân mình được nữa
+
 - intent: depression_129
   examples: |
     - Tôi cảm thấy thực sự thất vọng mọi lúc
 
+    - Tôi luôn thấy thất vọng mọi lúc mọi nơi
+    - Tôi luôn thấy cực kỳ thất vọng mọi lúc mọi nơi
+
 - intent: depression_130
   examples: |
-    - Có thể khiến PTSD rất chán nản không?
+    - Có thể PTSD làm cho chán nản không?
+
+    - Chứng rối loạn sau chấn thương có làm cho chán nản không?
+    - Chán nản có thể được gây ra bởi chứng rối loạn sau chấn thương không?
 
 - intent: depression_131
   examples: |
     - Tôi ghét nói chuyện với mọi người ít xa lạ hơn nhiều
 
+    - Tôi không thích nói chuyện với mọi người ít xa lạ hơn
+    - Tôi không thích nói chuyện với người ít xa lạ
+
 - intent: depression_133
   examples: |
     - Tôi đã có một đứa con khoảng 2 tháng trước và tôi thực sự không cảm thấy mình
 
+    - Tôi đã có 1 đứa con khoảng 2 tháng trước và tôi không cảm thấy bản thân mình của ngày xưa
+    - Tôi không thấy bản thân mình của ngày xưa sau khi có con
+
 - intent: depression_134
   examples: |
-    - Tôi bị trầm cảm bất cứ khi nào bất cứ ai tôi quan tâm là quá bận rộn để ở bên tôi.Tôi làm gì?
+    - Tôi bị trầm cảm bất cứ khi nào bất cứ ai tôi quan tâm là quá bận rộn để ở bên tôi. Tôi làm gì?
+
+    - Tôi bị trầm cảm bất cứ khi nào có ai đó tôi quan tâm bị quá bận rộn để ở bên tôi.
+    - Những người tôi quan tâm luôn bận rộn để ở bên tôi
 
 - intent: depression_135
   examples: |
     - Làm thế nào để tôi vượt qua một sự sụt giảm?
+    
+    - Sao để tôi vượt qua 1 sự sụt giảm?
 
 - intent: depression_136
   examples: |
     - Làm thế nào để tôi vượt qua lo lắng, trầm cảm và cô lập?
 
+    - Làm sao để vượt qua lo lắng, trầm cảm và sự cô lập?
+    - Vượt qua lo lắng, trầm cảm và cô lập bằng cách nào?
+
+#duplicate
 - intent: depression_137
   examples: |
     - Làm thế nào để tôi đối phó với trầm cảm?
 
+    - Đối phó với trầm cảm làm sao?
+
 - intent: depression_138
   examples: |
     - Tôi đang trải qua trầm cảm ngay bây giờ và mối quan hệ của tôi đang đau khổ
+
+    - Tôi đang trải qua chứng trầm cảm và mối quan hệ của tôi đang đau khổ
+    - Mối quan hệ của tôi đang đau khổ vì tôi đang bị trầm cảm
 
 - intent: anxiety_140
   examples: |
