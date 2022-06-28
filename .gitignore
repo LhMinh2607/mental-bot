@@ -1,0 +1,3 @@
+venv
+# exclude everything from models folder
+models/*
