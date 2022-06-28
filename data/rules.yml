@@ -138,3 +138,532 @@ rules:
 #   # - slot_was_set:
 #   #   - loop: ok
 #   - action: utter_affirm
+
+- rule: depression 0
+  steps:
+  - intent: depression_0
+  - action: utter_depression_0
+- rule: depression 1
+  steps:
+  - intent: depression_1
+  - action: utter_depression_1
+- rule: depression 2
+  steps:
+  - intent: depression_2
+  - action: utter_depression_2
+- rule: depression 3
+  steps:
+  - intent: depression_3
+  - action: utter_depression_3
+- rule: depression 4
+  steps:
+  - intent: depression_4
+  - action: utter_depression_4
+- rule: depression 5
+  steps:
+  - intent: depression_5
+  - action: utter_depression_5
+- rule: depression 6
+  steps:
+  - intent: depression_6
+  - action: utter_depression_6
+- rule: depression 7
+  steps:
+  - intent: depression_7
+  - action: utter_depression_7
+- rule: depression 8
+  steps:
+  - intent: depression_8
+  - action: utter_depression_8
+- rule: depression 9
+  steps:
+  - intent: depression_9
+  - action: utter_depression_9
+- rule: depression 10
+  steps:
+  - intent: depression_10
+  - action: utter_depression_10
+- rule: depression 11
+  steps:
+  - intent: depression_11
+  - action: utter_depression_11
+- rule: depression 12
+  steps:
+  - intent: depression_12
+  - action: utter_depression_12
+- rule: depression 13
+  steps:
+  - intent: depression_13
+  - action: utter_depression_13
+- rule: depression 14
+  steps:
+  - intent: depression_14
+  - action: utter_depression_14
+- rule: depression 15
+  steps:
+  - intent: depression_15
+  - action: utter_depression_15
+- rule: depression 17
+  steps:
+  - intent: depression_17
+  - action: utter_depression_17
+- rule: depression 18
+  steps:
+  - intent: depression_18
+  - action: utter_depression_18
+- rule: depression 19
+  steps:
+  - intent: depression_19
+  - action: utter_depression_19
+- rule: depression 20
+  steps:
+  - intent: depression_20
+  - action: utter_depression_20
+- rule: depression 21
+  steps:
+  - intent: depression_21
+  - action: utter_depression_21
+- rule: depression 22
+  steps:
+  - intent: depression_22
+  - action: utter_depression_22
+- rule: depression 23
+  steps:
+  - intent: depression_23
+  - action: utter_depression_23
+- rule: depression 24
+  steps:
+  - intent: depression_24
+  - action: utter_depression_24
+- rule: depression 26
+  steps:
+  - intent: depression_26
+  - action: utter_depression_26
+- rule: depression 27
+  steps:
+  - intent: depression_27
+  - action: utter_depression_27
+- rule: depression 28
+  steps:
+  - intent: depression_28
+  - action: utter_depression_28
+- rule: depression 29
+  steps:
+  - intent: depression_29
+  - action: utter_depression_29
+- rule: depression 30
+  steps:
+  - intent: depression_30
+  - action: utter_depression_30
+- rule: depression 31
+  steps:
+  - intent: depression_31
+  - action: utter_depression_31
+- rule: depression 32
+  steps:
+  - intent: depression_32
+  - action: utter_depression_32
+- rule: depression 33
+  steps:
+  - intent: depression_33
+  - action: utter_depression_33
+- rule: depression 34
+  steps:
+  - intent: depression_34
+  - action: utter_depression_34
+- rule: depression 35
+  steps:
+  - intent: depression_35
+  - action: utter_depression_35
+- rule: depression 36
+  steps:
+  - intent: depression_36
+  - action: utter_depression_36
+- rule: depression 37
+  steps:
+  - intent: depression_37
+  - action: utter_depression_37
+- rule: depression 38
+  steps:
+  - intent: depression_38
+  - action: utter_depression_38
+- rule: depression 39
+  steps:
+  - intent: depression_39
+  - action: utter_depression_39
+- rule: depression 40
+  steps:
+  - intent: depression_40
+  - action: utter_depression_40
+- rule: depression 41
+  steps:
+  - intent: depression_41
+  - action: utter_depression_41
+- rule: depression 42
+  steps:
+  - intent: depression_42
+  - action: utter_depression_42
+- rule: depression 43
+  steps:
+  - intent: depression_43
+  - action: utter_depression_43
+- rule: depression 44
+  steps:
+  - intent: depression_44
+  - action: utter_depression_44
+- rule: depression 45
+  steps:
+  - intent: depression_45
+  - action: utter_depression_45
+- rule: depression 46
+  steps:
+  - intent: depression_46
+  - action: utter_depression_46
+- rule: depression 47
+  steps:
+  - intent: depression_47
+  - action: utter_depression_47
+- rule: depression 48
+  steps:
+  - intent: depression_48
+  - action: utter_depression_48
+- rule: depression 49
+  steps:
+  - intent: depression_49
+  - action: utter_depression_49
+- rule: depression 50
+  steps:
+  - intent: depression_50
+  - action: utter_depression_50
+- rule: depression 51
+  steps:
+  - intent: depression_51
+  - action: utter_depression_51
+- rule: depression 52
+  steps:
+  - intent: depression_52
+  - action: utter_depression_52
+- rule: depression 53
+  steps:
+  - intent: depression_53
+  - action: utter_depression_53
+- rule: depression 54
+  steps:
+  - intent: depression_54
+  - action: utter_depression_54
+- rule: depression 55
+  steps:
+  - intent: depression_55
+  - action: utter_depression_55
+- rule: depression 56
+  steps:
+  - intent: depression_56
+  - action: utter_depression_56
+- rule: depression 57
+  steps:
+  - intent: depression_57
+  - action: utter_depression_57
+- rule: depression 58
+  steps:
+  - intent: depression_58
+  - action: utter_depression_58
+- rule: depression 59
+  steps:
+  - intent: depression_59
+  - action: utter_depression_59
+- rule: depression 60
+  steps:
+  - intent: depression_60
+  - action: utter_depression_60
+- rule: depression 61
+  steps:
+  - intent: depression_61
+  - action: utter_depression_61
+- rule: depression 62
+  steps:
+  - intent: depression_62
+  - action: utter_depression_62
+- rule: depression 63
+  steps:
+  - intent: depression_63
+  - action: utter_depression_63
+- rule: depression 64
+  steps:
+  - intent: depression_64
+  - action: utter_depression_64
+- rule: depression 65
+  steps:
+  - intent: depression_65
+  - action: utter_depression_65
+- rule: depression 66
+  steps:
+  - intent: depression_66
+  - action: utter_depression_66
+- rule: depression 67
+  steps:
+  - intent: depression_67
+  - action: utter_depression_67
+- rule: depression 68
+  steps:
+  - intent: depression_68
+  - action: utter_depression_68
+- rule: depression 69
+  steps:
+  - intent: depression_69
+  - action: utter_depression_69
+- rule: depression 70
+  steps:
+  - intent: depression_70
+  - action: utter_depression_70
+- rule: depression 71
+  steps:
+  - intent: depression_71
+  - action: utter_depression_71
+- rule: depression 72
+  steps:
+  - intent: depression_72
+  - action: utter_depression_72
+- rule: depression 73
+  steps:
+  - intent: depression_73
+  - action: utter_depression_73
+- rule: depression 74
+  steps:
+  - intent: depression_74
+  - action: utter_depression_74
+- rule: depression 75
+  steps:
+  - intent: depression_75
+  - action: utter_depression_75
+- rule: depression 76
+  steps:
+  - intent: depression_76
+  - action: utter_depression_76
+- rule: depression 77
+  steps:
+  - intent: depression_77
+  - action: utter_depression_77
+- rule: depression 78
+  steps:
+  - intent: depression_78
+  - action: utter_depression_78
+- rule: depression 79
+  steps:
+  - intent: depression_79
+  - action: utter_depression_79
+- rule: depression 80
+  steps:
+  - intent: depression_80
+  - action: utter_depression_80
+- rule: depression 81
+  steps:
+  - intent: depression_81
+  - action: utter_depression_81
+- rule: depression 82
+  steps:
+  - intent: depression_82
+  - action: utter_depression_82
+- rule: depression 83
+  steps:
+  - intent: depression_83
+  - action: utter_depression_83
+- rule: depression 84
+  steps:
+  - intent: depression_84
+  - action: utter_depression_84
+- rule: depression 85
+  steps:
+  - intent: depression_85
+  - action: utter_depression_85
+- rule: depression 86
+  steps:
+  - intent: depression_86
+  - action: utter_depression_86
+- rule: depression 87
+  steps:
+  - intent: depression_87
+  - action: utter_depression_87
+- rule: depression 88
+  steps:
+  - intent: depression_88
+  - action: utter_depression_88
+- rule: depression 89
+  steps:
+  - intent: depression_89
+  - action: utter_depression_89
+- rule: depression 90
+  steps:
+  - intent: depression_90
+  - action: utter_depression_90
+- rule: depression 91
+  steps:
+  - intent: depression_91
+  - action: utter_depression_91
+- rule: depression 92
+  steps:
+  - intent: depression_92
+  - action: utter_depression_92
+- rule: depression 93
+  steps:
+  - intent: depression_93
+  - action: utter_depression_93
+- rule: depression 95
+  steps:
+  - intent: depression_95
+  - action: utter_depression_95
+- rule: depression 96
+  steps:
+  - intent: depression_96
+  - action: utter_depression_96
+- rule: depression 97
+  steps:
+  - intent: depression_97
+  - action: utter_depression_97
+- rule: depression 98
+  steps:
+  - intent: depression_98
+  - action: utter_depression_98
+- rule: depression 99
+  steps:
+  - intent: depression_99
+  - action: utter_depression_99
+- rule: depression 100
+  steps:
+  - intent: depression_100
+  - action: utter_depression_100
+- rule: depression 101
+  steps:
+  - intent: depression_101
+  - action: utter_depression_101
+- rule: depression 102
+  steps:
+  - intent: depression_102
+  - action: utter_depression_102
+- rule: depression 103
+  steps:
+  - intent: depression_103
+  - action: utter_depression_103
+- rule: depression 104
+  steps:
+  - intent: depression_104
+  - action: utter_depression_104
+- rule: depression 105
+  steps:
+  - intent: depression_105
+  - action: utter_depression_105
+- rule: depression 106
+  steps:
+  - intent: depression_106
+  - action: utter_depression_106
+- rule: depression 107
+  steps:
+  - intent: depression_107
+  - action: utter_depression_107
+- rule: depression 108
+  steps:
+  - intent: depression_108
+  - action: utter_depression_108
+- rule: depression 110
+  steps:
+  - intent: depression_110
+  - action: utter_depression_110
+- rule: depression 111
+  steps:
+  - intent: depression_111
+  - action: utter_depression_111
+- rule: depression 112
+  steps:
+  - intent: depression_112
+  - action: utter_depression_112
+- rule: depression 113
+  steps:
+  - intent: depression_113
+  - action: utter_depression_113
+- rule: depression 114
+  steps:
+  - intent: depression_114
+  - action: utter_depression_114
+- rule: depression 115
+  steps:
+  - intent: depression_115
+  - action: utter_depression_115
+- rule: depression 116
+  steps:
+  - intent: depression_116
+  - action: utter_depression_116
+- rule: depression 117
+  steps:
+  - intent: depression_117
+  - action: utter_depression_117
+- rule: depression 118
+  steps:
+  - intent: depression_118
+  - action: utter_depression_118
+- rule: depression 119
+  steps:
+  - intent: depression_119
+  - action: utter_depression_119
+- rule: depression 120
+  steps:
+  - intent: depression_120
+  - action: utter_depression_120
+- rule: depression 121
+  steps:
+  - intent: depression_121
+  - action: utter_depression_121
+- rule: depression 122
+  steps:
+  - intent: depression_122
+  - action: utter_depression_122
+- rule: depression 125
+  steps:
+  - intent: depression_125
+  - action: utter_depression_125
+- rule: depression 126
+  steps:
+  - intent: depression_126
+  - action: utter_depression_126
+- rule: depression 127
+  steps:
+  - intent: depression_127
+  - action: utter_depression_127
+- rule: depression 128
+  steps:
+  - intent: depression_128
+  - action: utter_depression_128
+- rule: depression 129
+  steps:
+  - intent: depression_129
+  - action: utter_depression_129
+- rule: depression 130
+  steps:
+  - intent: depression_130
+  - action: utter_depression_130
+- rule: depression 131
+  steps:
+  - intent: depression_131
+  - action: utter_depression_131
+- rule: depression 133
+  steps:
+  - intent: depression_133
+  - action: utter_depression_133
+- rule: depression 134
+  steps:
+  - intent: depression_134
+  - action: utter_depression_134
+- rule: depression 135
+  steps:
+  - intent: depression_135
+  - action: utter_depression_135
+- rule: depression 136
+  steps:
+  - intent: depression_136
+  - action: utter_depression_136
+- rule: depression 137
+  steps:
+  - intent: depression_137
+  - action: utter_depression_137
+- rule: depression 138
+  steps:
+  - intent: depression_138
+  - action: utter_depression_138

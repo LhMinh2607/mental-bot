@@ -64,7 +64,9 @@ length = len(topicNames)
 # df = pd.read_csv('z_pythontest/counsel_chat.csv')
 print("df")
 
-f = open("others/StoriesDataset.yml", 'w', encoding="utf-8")
+# f = open("others/StoriesDataset.yml", 'w', encoding="utf-8")
+f = open("others/RulesDataset.yml", 'w', encoding="utf-8")
+
 
 # f = open("z_pythontest/dataset2/counselchat_vi_depression_0.csv", 'r')
 
@@ -87,10 +89,10 @@ def csvToRasaStoriesYaml(topicName, range1, range2):
             # print('z_pythontest/dataset/counselchat_vi_'+topicName+'_'+str(i)+'.csv')
             try:
                 df = pd.read_csv('z_pythontest/dataset2/counselchat_vi_'+topicName+'_'+str(i)+'.csv', encoding="utf-8")
-                f.write("- story: "+str(topicName)+" "+str(i)+"\n")
+                f.write("- rule: "+str(topicName)+" "+str(i)+"\n")
                 f.write("  steps:"+"\n")
                 f.write("  - intent: "+str(topicName)+"_"+str(i)+"\n")
-                f.write("  - action: "+str(topicName)+"_"+str(i)+"\n")
+                f.write("  - action: utter_"+str(topicName)+"_"+str(i)+"\n")
             except Exception as e:
                 print(e)
                 continue

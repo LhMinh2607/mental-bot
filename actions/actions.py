@@ -117,19 +117,19 @@ class ActionSendPicture(Action):
             query = query.replace("Đi", "")
             query = query.replace("gì", "")
             query = query.replace("Gì", "")
-            query = query.replace(" ","%20")
+            # query = query.replace(" ","%20")
             translator = Translator()
             enQuery = translator.translate(query, dest='en')
-            enQuery = str(enQuery.text).replace("2017", " ")
+            enQuery = str(enQuery.text).replace(" ","%20")
             print(enQuery)
             if enQuery:
                 headers = {
-                    'X-RapidAPI-Host': RAPID_API_HOST,
-                    'X-RapidAPI-Key': RAPID_API_KEY ##changed key :wink: :wink:
+                    'X-RapidAPI-Host': "contextualwebsearch-websearch-v1.p.rapidapi.com",
+                    'X-RapidAPI-Key': "15b3fa1d8cmsh1ae9b5162464c82p17fba9jsn8e709fcfccf1"
                 }
                 null = None
 
-                conn = http.client.HTTPSConnection(RAPID_API_HOST)
+                conn = http.client.HTTPSConnection("contextualwebsearch-websearch-v1.p.rapidapi.com")
 
                 conn.request("GET", "/api/Search/ImageSearchAPI?q="+enQuery+"&pageNumber=1&pageSize=1&autoCorrect=true&base64Encoding=false", headers=headers)
 
